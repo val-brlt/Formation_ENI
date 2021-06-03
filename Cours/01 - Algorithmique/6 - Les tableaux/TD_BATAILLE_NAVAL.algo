@@ -1,0 +1,55 @@
+Algo BATAILLE_NAVAL
+Constante TAILLE_MAX : entier <- 4
+Variable tab_jeu : caractère [TAILLE_MAX][TAILLE_MAX]
+Variable tab_bateau : booléen [TAILLE_MAX][TAILLE_MAX]
+Variable bateau_ligne : entier <- aléa(0,3)
+Variable bateau_colonne : entier <- aléa(0,3)
+Variable ligne, colonne, i, j : entier 
+
+Début
+
+	# On remplit et affiche le plateau de jeu de ????
+	Pour i <- 0 à TAILLE_MAX - 1
+		Pour j <- 0 à TAILLE_MAX - 1
+			tab_jeu[i][j] <- '?'
+			tab_bateau[i][j] <- FAUX
+			écrireSRC(tab_jeu[i][j])
+		FPour
+		écrire('')
+	FPour
+	
+	
+	# On remplit le tableau avec un bateau
+		tab_bateau[bateau_x][bateau_y] <- VRAI
+	
+	#On compare x,y de l'user avec le bateau
+	Répéter 
+		# On récupère x et y du joueur
+		Répéter
+			colonne <- saisir("Quelle colonne ?") 
+			ligne <- saisir("Quelle ligne ?")
+			Si colonne < 1 ou colonne > TAILLE_MAX ou ligne < 1 ou ligne > TAILLE_MAX Alors
+				écrire("Hors champ !")
+		TantQue colonne < 1 ou colonne > TAILLE_MAX ou ligne < 1 ou ligne > TAILLE_MAX FRépéter
+		
+		Si tab_bateau[ligne - 1][colonne - 1] = VRAI Alors
+			#GAGNE
+			écrire("Boom ! Touché coulé")
+			écrire("Bravo, vous avez gagné !")
+		Sinon 
+			#PERDU
+			écrire("Plouf ! A l'eau !")
+			tab_jeu[ligne - 1][colonne - 1] = '~'
+		
+			Pour i <- 0 à TAILLE_MAX - 1
+				Pour j <- 0 à TAILLE_MAX - 1
+					écrireSRC(tab_jeu[i][j])
+				FPour
+				écrire('')
+			FPour
+		FSi
+	TantQue tab_bateau[ligne - 1][colonne - 1] = FAUX FRépéter
+	
+	
+
+Fin 

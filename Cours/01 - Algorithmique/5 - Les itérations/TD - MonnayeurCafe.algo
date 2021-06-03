@@ -1,0 +1,91 @@
+Algo MonnayeurCafé
+Variable piece : réel
+Variable somme : réel <- 0
+Variable reste : réel <- 0
+
+Constante CAFE : réel <- 0.6
+Constante DEUX_EUR : réel <- 2
+Constante UN_EUR : réel <- 1
+Constante CINQUANTE_CENT : réel <- 0.5
+Constante VINGT_CENT : réel <- 0.2
+Constante DIX_CENT : réel <- 0.1
+Constante CINQ_CENT : réel <- 0.05
+Début
+	
+	# Récupération des pièces
+	TantQue somme < CAFE
+		piece <- saisir("Entrez la valeur de la pièce")
+		Selon piece 
+			DEUX_EUR : somme <- somme + DEUX_EUR
+			UN_EUR : somme <- somme + UN_EUR
+			CINQUANTE_CENT : somme <- somme + CINQUANTE_CENT
+			VINGT_CENT : somme <- somme + VINGT_CENT
+			DIX_CENT : somme <- somme + DIX_CENT
+			CINQ_CENT : somme <- somme + CINQ_CENT
+			autre : écrire("Pièce non acceptée, entrez une autre pièce")
+		FSelon
+		Si somme < CAFE Alors
+			écrire("Crédit insuffisant (" & somme & "€/" & CAFE & "€")
+		FSi
+	FTq
+	
+	
+	
+	# Rendu de la monnaie
+	reste <- somme - CAFE
+	Si reste = 0 Alors
+		écrire("Voici votre café !")
+	Sinon 
+		écrire("Voici votre café  et votre monnaie (" & reste & "!")
+		Si reste > DEUX_EUR Alors
+			cpt <- 0
+			TantQue reste < DEUX_EUR
+				cpt <- cpt + 1
+				reste <- reste - DEUX_EUR
+			FTq
+			écrire(cpt & "pièce(s) de " & DEUX_EUR)
+		FSi	
+		Si reste > UN_EUR Alors
+			cpt <- 0
+			TantQue reste < UN_EUR
+				cpt <- cpt + 1
+				reste <- reste - UN_EUR
+			FTq
+			écrire(cpt & "pièce(s) de " & UN_EUR)
+		FSi	
+		Si reste > CINQUANTE_CENT Alors
+			cpt <- 0
+			TantQue reste < CINQUANTE_CENT
+				cpt <- cpt + 1
+				reste <- reste - CINQUANTE_CENT
+			FTq
+			écrire(cpt & "pièce(s) de " & CINQUANTE_CENT)				
+		FSi	
+		Si reste > VINGT_CENT Alors	
+			cpt <- 0
+			TantQue reste < VINGT_CENT
+				cpt <- cpt + 1
+				reste <- reste - VINGT_CENT
+			écrire(cpt & "pièce(s) de " & VINGT_CENT)
+			FTq
+		FSi
+		Si reste > DIX_CENT Alors
+			cpt <- 0
+			TantQue reste < DIX_CENT
+				cpt <- cpt + 1
+				reste <- reste - DIX_CENT
+			FTq
+			écrire(cpt & "pièce(s) de " & DIX_CENT)
+		FSi		
+		Si reste > CINQ_CENT Alors
+			cpt <- 0
+			TantQue reste < CINQ_CENT
+				cpt <- cpt + 1
+				reste <- reste - CINQ_CENT
+			FTq
+			écrire(cpt & "pièce(s) de " & CINQ_CENT)
+		FSi
+	FSi	
+	
+	
+Fin

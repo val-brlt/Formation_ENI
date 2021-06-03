@@ -1,0 +1,17 @@
+Algo ASCII_ART
+Variable largeur : entier
+Variable longueur : entier
+Variable cara : caractère 
+
+Début
+	largeur <- saisir("Quelle est la largeur ?")
+	longueur <- saisir("Quelle est la longueur ?")
+	cara <- saisir("Caractère ?")
+	
+	Pour j <- 1 à largeur
+		Pour i <- 1 à longueur
+			écrireSRC(cara)
+		FPour
+		écrire('')
+	FPour
+Fin

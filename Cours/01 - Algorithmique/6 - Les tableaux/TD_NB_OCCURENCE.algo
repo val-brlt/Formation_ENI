@@ -1,0 +1,26 @@
+Algo nb_occurence
+Variable tab : entier[10]
+Variable nb, i, j : entier
+Début
+	# On met à 0 le tab
+	Pour i <- 0 à 9 
+		tab[i] <- 0
+	FPour
+
+	#saisie chiffre
+	nb <- saisir("Entrer une valeur comprise entre 0 et 9 (-1 pour terminer)")
+	TantQue nb != -1 
+		Si nb >= 0 et nb <= 9 Alors
+			tab[nb] <- tab[nb] + 1
+		Sinon
+				écrire("Veuillez rentrer un chiffre entre 0 et 9")
+		FSi
+		nb <- saisir("Autre valeur, svp : ")
+	FTq
+	
+	# Affichage chiffre
+	Pour j <- 0 à 9 
+		écrire("Nombre de " & i & " : " & tab[i])
+	FPour
+
+Fin 

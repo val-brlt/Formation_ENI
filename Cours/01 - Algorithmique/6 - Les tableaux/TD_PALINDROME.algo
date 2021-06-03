@@ -1,0 +1,40 @@
+Algo palindrome
+Constante TAILLE_MAX : entier <- 29
+Variable mot : caractère[TAILLE_MAX + 1]
+Variable mot_tmp : caractère
+Variable rst : booléen <- VRAI
+Variable nbCar, i , j : entier <- 0
+Constante STOP : caractère <- '#'
+
+Début
+	
+	# Saisie du mot
+	écrire("Entrez un mot puis tapez " & STOP)
+	mot[nbCar]  <- saisir()
+	TantQue mot[nbCar]  != STOP ou nbCar < TAILLE_MAX
+			nbCar <- nbCar + 1
+			mot[nbCar]  <- saisir()
+	FTq
+	
+	Si mot[nbCar] != STOP Alors
+		écrire("Le mot est trop long")
+	Sinon
+		# Comparaison palindrome
+		j <- nbCar - 1
+		i <- 0
+		TantQue i < j et rst
+			Si mot[i] != mot[j] Alors 
+				rst <- FAUX
+			FSi
+			j <- j - 1
+			i <- i + 1
+		FTq
+	FSi
+	
+	# Affichage résultat
+	Si rst = FAUX Alors
+		écrire("Ce mot n'est pas un palindrome")
+	Sinon 
+		écrire("Ce mot est un palindrome")
+	FSi
+Fin 
