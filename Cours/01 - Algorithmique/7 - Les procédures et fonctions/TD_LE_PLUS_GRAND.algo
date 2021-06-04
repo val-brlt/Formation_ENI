@@ -1,0 +1,42 @@
+Fonction réel_max ( val1 : réel, val2 : réel) Retourne réel 
+Début 
+	Si val1 > val2 Alors
+		Retourne val1
+	Sinon 
+		Retourne val2
+	FSi
+Fin
+
+Fonction réel_cmp ( val1 : réel, val2 : réel) Retourne entier 
+Début 
+	Si val1 > val2 Alors
+		Retourne 1
+	Sinon 
+		Si val1 = val2 Alors
+			Retourne 0
+		Sinon
+			Retourne -1
+		FSi
+	FSi
+Fin 
+
+Algo le_plus_grand
+Variable valeur1 : réel 
+Variable valeur2 : réel 
+Début 
+	valeur1 <- saisir("Valeur 1 ?")
+	valeur2 <- saisir("Valeur 2 ?")
+	écrire("Résultats 1 ère Fonction(Valeur la plus grande) : " & réel_max(valeur1, valeur2))
+	
+	écrire("Résultats 2ème Fonction(compare) : ")
+	rst = réel_cmp(valeur1, valeur2)
+	Si rst = 0 Alors
+		écrire("Les deux valeurs sont égaux")
+	Sinon
+		Si rst = 1 Alors
+			écrire("La première valeur est plus grande !")		
+		Sinon
+			écrire("La deuxième valeur est plus grande !")	
+		FSi
+	FSi	
+Fin 
