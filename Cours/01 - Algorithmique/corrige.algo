@@ -1,0 +1,678 @@
+Algo vitesseMoyenne
+# calcule la vitesse moyenne de déplacement
+Variable distance, temps : réel
+Constante UNE_HEURE : entier <- 60
+Début
+	écrire("Saisissez la distance parcourue (km)")
+	distance <- saisir()
+	écrire("Saisissez le temps de parcours (min)")
+	temps <- saisir()
+	temps <- (temps / UNE_HEURE)
+	écrire("Vous vous êtes déplacé à " & distance / temps & " km/h")
+Fin
+
+Algo risqueVerglas
+# Saisir la température et avertir des risques de verglas
+Variable temperature : réel
+Constante LIMITE_RISQUE_VERGLAS : entier <- 2
+Début
+	temperature <- saisir("Quelle est la température ?")
+	Si temperature < LIMITE_RISQUE_VERGLAS Alors
+		écrire("Risque de verglas")
+	FSi
+Fin
+
+Algo temperatureV2
+# Affiche un message en fonction de la température
+Variable temperature : réel
+Constante LIMITE_VERGLAS : entier <- 2
+Constante LIMITE_MODERE : entier <- 15
+Constante LIMITE_CHALEUR : entier <- 30
+Début
+	temperature <- saisir("Quelle est la température ?")
+	Si temperature < LIMITE_VERGLAS Alors
+		écrire("Risque de verglas")
+	FSi
+	Si temperature >= LIMITE_VERGLAS et temperature < LIMITE_MODERE Alors
+			écrire("C'est pas chaud")
+	FSi
+	Si temperature >= LIMITE_MODERE et temperature < LIMITE_CHALEUR Alors
+		écrire("Bonne température")
+	FSi
+	Si temperature >= LIMITE_CHALEUR Alors
+		écrire("Trop chaud !")
+	FSi
+Fin
+
+Algo nomDuMois
+# affiche le nom du mois en toutes lettres en focntion du numéro saisi
+Variable mois : entier
+Début
+	mois <- saisir("numéro mois ?")
+	Selon mois
+		cas 1 : écrire("Janvier")
+		cas 2 : écrire("Février")
+		cas 3 : écrire("Mars")
+		cas 4 : écrire("Avril")
+		cas 5 : écrire("Mai")
+		cas 6 : écrire("Juin")
+		cas 7 : écrire("Juillet")
+		cas 8 : écrire("Août")
+		cas 9 : écrire("Septembre")
+		cas 10 : écrire("Octobre")
+		cas 11 : écrire("Novembre")
+		cas 12 : écrire("Décembre")
+		autre : écrire("Le numéro du mois est incorrect !")
+	FSelon
+Fin
+
+Algo tempsDeCuisson
+# affiche le temps cuisson en fonction du type de viande, de cuisson voulue et du poids
+Variable viande, cuisson : texte
+Variable poids, temps : réel
+Variable erreur : booléen <- FAUX
+Constante MINUTE : entier <- 60
+Constante BOEUF : entier <- 500
+Constante AGNEAU : entier <- 400
+Début
+	viande <- saisir("saisissez le type de viande (Boeuf ou Agneau)")
+	cuisson <- saisir("saisissez la cuisson de la viande (Bleu, A point ou Bien cuit)")
+	poids <- saisir("saisissez le poids de la viande (gramme)")
+	Selon viande
+		cas "Boeuf" :
+			Selon cuisson
+				cas "Bleu" : temps <- poids × 10 × MINUTE / BOEUF
+				cas "A point" : temps <- poids × 17 × MINUTE / BOEUF
+				cas "Bien cuit" : temps <- poids × 25 × MINUTE / BOEUF
+				autre : écrire("Ce type de cuisson n'est pas pris en compte")
+					erreur <- VRAI
+			FSelon
+		cas "Agneau" :
+			Selon cuisson
+				cas "Bleu" : temps <- poids × 15 × MINUTE / AGNEAU
+				cas "A point" : temps <- poids × 25 × MINUTE / AGNEAU
+				cas "Bien cuit" : temps <- poids × 40 × MINUTE / AGNEAU
+			autre : écrire("Ce type de cuisson n'est pas pris en compte")
+					erreur <- VRAI
+			FSelon
+		autre :
+			écrire("Ce type de viande n'est pas géré par ce programme...")
+			erreur <- VRAI
+	FSelon
+	Si non erreur Alors
+		écrire("Pour " & poids & "grammes de " & viande &
+							", il faut un temps de cuisson de " & temps & " secondes")
+	FSi
+Fin
+
+Algo décollage
+Variable d : entier
+Début
+	Pour d <- 10 à 0 par -1
+		écrire(d)
+	FPour
+	# affiche
+	# 10
+	# 9
+	# 8
+	# ...
+	# 1
+	# 0
+Fin
+
+Algo moyenneDeNotes
+# calcul de la moyenne des notes
+Variable nbNotes, i : entier
+Variable somme, note : réel
+Variable i : entier 
+Début
+	somme <- 0
+	écrire("Entrez le nombre de notes")
+	nbNotes <- saisir()
+	Si nbNotes <= 0 Alors
+		écrire("Aucune note donc pas de moyenne")
+	Sinon
+		Pour i <- 1 à nbNotes
+			note <- saisir("Entrez votre note")
+			somme <- somme + note
+		FPour
+		écrire("Votre moyenne est de " & somme / nbNotes)
+	FSi
+Fin
+
+Algo moyenneDeNotes2
+# calule la moyenne des notes
+Variable note, total : réel
+Variable nombreNotes : entier
+Début
+	total <- 0
+	nombreNotes <- 0
+	note <- saisir("Note (-1 pour terminer)")
+	TantQue note =/= -1
+		total <- total + note
+		nombreNotes <- nombreNotes + 1
+		note <- saisir("Note (-1 pour terminer)")
+	FTq
+	Si nombreNotes > 0 Alors
+		écrire("la moyenne des notes est de " & total / nombreNotes)
+	Sinon
+		écrire("Aucune note saisie")
+	FSi
+Fin
+
+Algo moyenneDeNotes3
+# calule la moyenne des notes
+Variable note, total : réel
+Variable nombreNotes, bonnesNotes : entier
+Début
+	total <- 0
+	nombreNotes <- 0
+	bonnesNotes <- 0
+	note <- saisir("Note (-1 pour terminer)")
+	TantQue note =/= -1
+		Si note > 10 Alors
+			bonnesNotes <- bonnesNotes + 1
+		FSi
+		total <- total + note
+		nombreNotes <- nombreNotes + 1
+		note <- saisir("Note (-1 pour terminer)")
+	FTq
+	Si nombreNotes > 0 Alors
+		écrire("la moyenne des notes est de " & total / nombreNotes)
+		écrire("Il y a " & bonnesNotes / nombreNotes * 100 & "% notes suppérieur à 10")
+	Sinon
+		écrire("Aucune note saisie")
+	FSi
+Fin
+
+Algo nombreCacheCache
+Constante NB_MYSTERE : entier <- aléa(1,100)
+Variable nombre : entier
+Début
+	nombre <- saisir("à quel nombre entre 1 et 100, je pense")
+	TantQue nombre =/= NB_MYSTERE
+		Si nombre > NB_MYSTERE Alors
+			écrire("C'est moins")
+		Sinon
+			écrire("C'est plus")
+		FSi
+		nombre <- saisir()
+	FTq
+	écrire("Bravo vous avez trouvé !")
+Fin
+
+Algo répliquesDeFilm
+# affiche une réplique de film choisie
+Variable saisie : entier <- 0
+Début
+	écrire("1 - Le seigneur des anneaux")
+	écrire("2 - Star Wars")
+	écrire("3 - Asterix et Cléopatre")
+	écrire("4 - Retour vers le futur")
+	écrire("5 - Quitter l'application")
+	Répéter
+		saisie <- saisir("Choisissez une option")
+		Selon saisie
+			cas 1 : écrire("Y'a toujours de l'espoir !")
+			cas 2 : écrire("Seul les siths sont toujours absolus")
+			cas 3 : écrire("...")
+			cas 4 : écrire("2,21 GWatt")
+			cas 5 : écrire("Merci de votre visite !")
+			autre : écrire("Saisie invalide")
+		FSelon
+	TantQue saisi =/= 5 FRépéter
+	
+Fin
+
+Algo MonnayeurCafe
+Variable piece, total, monnaie : réel
+Variable nbPieces1e : entier <- 0
+Variable nbPieces50c : entier <- 0
+Variable nbPieces20c : entier <- 0
+Variable nbPieces10c : entier <- 0
+Variable nbPieces5c : entier <- 0
+Constante PRIX_CAFE : réel <- 0,60
+Début
+	# Récupération des pièces
+	total <- 0
+	écrire("entrez la valeur de la pièce (2€, 1€, 0€50, 0€20, 0€10, 0€05)")
+	Répéter
+		piece <- saisir()
+		Selon piece
+			cas 2; 1; 0,5; 0,2; 0,1; 0,05 :
+				total <- total + piece
+				Si total < PRIX_CAFE Alors
+					écrire("Crédit insufisant (" & total & "€ / " & PRIX_CAFE & "€)")
+				FSi
+			autre :
+				écrire("Cette pièce n'est pas acceptée")
+		FSelon
+	TantQue total < PRIX_CAFE FRépéter
+	monnaie <- total - PRIX_CAFE
+	# Rendu de la monnaie
+	écrire("Voici votre café et votre monnaie : " & monnaie & "€")
+	
+	TantQue monnaie > 0
+		Si monnaie >= 1 Alors
+			monnaie <- monnaie - 1
+			nbPieces1e <- nbPieces1e + 1
+		Sinon
+			Si monnaie >= 0,5 Alors
+				monnaie <- monnaie - 0,5
+				nbPieces50c <- nbPieces50c + 1
+			Sinon
+				Si monnaie >= 0,2 Alors
+					monnaie <- monnaie - 0,2
+					nbPieces20c <- nbPieces20c + 1
+				Sinon
+					Si monnaie >= 0,1 Alors
+						monnaie <- monnaie - 0,1
+						nbPieces10c <- nbPieces10c + 1
+					Sinon
+						monnaie <- monnaie - 0,05
+						nbPieces5c <- nbPieces5c + 1
+					FSi
+				FSi
+			FSi
+		FSi
+	FTq
+	Si nbPieces1e > 0 Alors
+		écrire(nbPieces1e & " pièce(s) de 1€")
+	FSi
+	Si nbPieces50c > 0 Alors
+		écrire(nbPieces50c & " pièce(s) de 0€50")
+	FSi
+	Si nbPieces20c > 0 Alors
+		écrire(nbPieces20c & " pièce(s) de 0€20")
+	FSi
+	Si nbPieces10c > 0 Alors
+		écrire(nbPieces10c & " pièce(s) de 0€10")
+	FSi
+	Si nbPieces5c > 0 Alors
+		écrire(nbPieces5c & " pièce(s) de 0€05")
+	FSi
+	
+	# ou bien
+	Si monnaie >= 1 Alors
+		écrire("1 pièce de 1€")
+		monnaie <- monnaie - 1
+	FSi
+	Si monnaie >= 0,5 Alors
+		écrire("1 pièce de 0€50")
+		monnaie <- monnaie - 0,5
+	FSi
+	Si monnaie >= 0,4 Alors
+		écrire("2 pièces de 0€20")
+		monnaie <- monnaie - 0,4
+	FSi
+	Si monnaie >= 0,2 Alors
+		écrire("1 pièce de 0€20")
+		monnaie <- monnaie - 0,2
+	FSi
+	Si monnaie >= 0,1 Alors
+		écrire("1 pièce de 0€10")
+		monnaie <- monnaie - 0,1
+	FSi
+	Si monnaie >= 0,05 Alors
+		écrire("1 pièce de 0€05")
+		monnaie <- monnaie - 0,05
+	FSi
+Fin
+
+Algo ASCIIRectangle
+Variable largeur, hauteur, i, j : entier
+Variable caractere : caractère
+Début
+	largeur <- saisir("Largeur ?")
+	hauteur <- saisir("Hauteur ?")
+	caractere <- saisir("Caractère ?")
+	Pour j <- 1 à hauteur
+		Pour i <- 1 à largeur
+			écrireSRC(caractere)
+		FPour
+		écrire()
+	FPour
+Fin
+
+Algo tableau
+Variable tableau : entier[10]
+Variable valeur, i : entier
+Constante STOP : entier <- -1
+Début
+	# initialiser l'ensemble des cases du tableau à la valeur 0
+	Pour i <- 0 à 9
+		tableau[i] <- 0
+	FPour
+	# saisie des valeurs
+	valeur <- saisir("entrez une valeur comprise entre 0 et 9 ou " & STOP & " pour terminer")
+	TantQue valeur =/= STOP
+		Si 0 <= valeur et valeur <= 9 Alors
+			tableau[valeur] <- tableau[valeur] + 1
+		Sinon
+			écrire("Veuillez ne saisir que des valeurs comprise entre 0 et 9")
+		FSi
+		valeur <- saisir("autre valeur, svp")
+	FTq
+	# affichage
+	Pour i <- 0 à 9
+		écrire("Nombre de " & i &" : " & tableau[i])
+	FPour
+Fin
+
+Algo palindrome
+Constante TAILLE_MAX : entier <- 30
+Variable nbCar : entier <- 0
+Variable mot : caractère[TAILLE_MAX]
+Constante STOP : caractère <- '#'
+Variable i, j : entier
+Variable palindrome : booléen <- VRAI
+Début
+	# saisie du mot
+	écrire("Entrez un mot puis le caractère " & STOP)
+	mot[nbCar] <- saisir()
+	TantQue mot[nbCar] =/= STOP et nbCar < TAILLE_MAX
+		nbCar <- nbCara + 1
+		mot[nbCar] <- saisir()
+	FTq
+	Si mot[nbCar] =/= STOP Alors
+		écrire("Le mot est trop long !")
+	Sinon
+		# test si palindrome
+		i <- 0
+		j <- nbCar - 1
+		TantQue i < j et palindrome
+			Si mot[i] =/= mot[j] Alors
+				palindrome <- FAUX
+			FSi
+			i <- i + 1
+			j <- j - 1
+		FTq
+		Si palindrome Alors
+			écrire("Ce mot est un palindrome")
+		Sinon
+			écrire("Ce mot n'est pas un palindrome")
+		FSi
+	FSi
+Fin
+
+Algo QueFaitIlDoncV2
+# 
+Constante TAILLE	: entier <- 4
+Variable i, j, val : entier
+Variable tab2d : entier[TAILLE][TAILLE]
+Début
+	val <- 1
+	Pour i <- 0 à TAILLE - 1
+		Pour j <- 0 à TAILLE - 1
+			tab2d[j][i] <- val
+			val <- val + 1
+		FPour
+	FPour
+Fin
+
+Algo grille
+Constante TAILLE : entier <- 4
+Variable tab2d : entier[TAILLE][TAILLE]
+Variable i, j, colonne, ligne : entier
+Début
+	#la première ligne
+	Pour i <- 0 à TAILLE - 1
+		tab2d[0][i] <- i
+	FPour
+	# toutes les autres lignes
+	Pour j <- 1 à TAILLE - 1
+		Pour i <- 0 à TAILLE - 1
+			tab2d[j][i] <- tab2d[j-1][i] + 1
+		FPour
+	FPour
+Fin
+
+Algo QueFaitIlDoncV3
+# 
+Constante TAILLE	: entier <- 4
+Variable i, j, val : entier
+Variable tab2d : entier[TAILLE][TAILLE]
+Début
+	Pour j <- 0 à TAILLE - 
+		val <- j
+		Pour i <- 0 à TAILLE - 1
+			tab2d[j][i] <- val
+			val <- val + 1
+		FPour
+	FPour
+Fin
+
+Algo BatailleNavale
+Constante TAILLE : entier <- 4
+Variable plateauJeu : caractère[TAILLE][TAILLE]
+Variable plateauGagnant : booléen[TAILLE][TAILLE]
+Variable j, i : entier
+Début
+	# initialiser les tableaux représentant le plateau de jeu
+	Pour j <- 0 à TAILLE - 1
+		Pour i <- 0 à TAILLE - 1
+			plateauJeu[j][i] <- '?'
+			plateauGagnant[j][i] <- FAUX
+		FPour
+	FPour
+	# postionnement aléatoire du bateau
+	i <- aléa(0, TAILLE - 1)
+	j <- aléa(0, TAILLE - 1)
+	plateauGagnant[j][i] <- VRAI
+	Répéter
+		# afficher le plateau de jeu
+		Pour j <- 0 à TAILLE - 1
+			Pour i <- 0 à TAILLE - 1
+				écrireSRC(plateauJeu[j][i])
+			FPour
+			écrire()
+		FPour
+		# demmander les coordonnées de tir
+		Répéter
+			colonne <- saisir("Quelle colonne ?")
+			ligne <- saisir("Quelle ligne ?")
+			Si colonne < 1 ou colonne > TAILLE ou ligne < 1 ou ligne > TAILLE Alors
+				écrire("Hors champ !")
+			FSi
+		TantQue colonne < 1 ou colonne > TAILLE ou ligne < 1 ou ligne > TAILLE FRépéter
+		# afficher le resultat
+		Si plateauGagnant[ligne-1][colonne-1] = FAUX Alors
+			écrire("Plouf à l'eau !")
+			# modifie le plateau de jeu
+			plateauJeu[ligne-1][colonne-1] <- '~'
+		FSi
+	TantQue plateauGagnant[ligne-1][colonne-1] = FAUX FRépéter
+	écrire("Boom ! Touché coulé ! Bravo vous avez gagné")
+Fin
+
+Fonction plusGrand(a : réel, b : réel) Retourne réel
+Variable resultat : réel
+Début
+	Si a > b Alors
+		resultat <- a
+	Sinon
+		resultat <- b
+	FSi
+	Retourner resultat
+Fin
+
+Constante INFERIEUR : entier <- -1
+Constante SUPPERIEUR : entier <- 1
+Constante EGAL : entier <- 0
+
+Fonction comparaison(a : réel, b : réel) Retourne entier
+Variable p : entier
+Début
+	Si a > b Alors
+		p <- SUPPERIEUR
+	Sinon
+		Si a = b Alors
+			p <- EGAL
+		Sinon
+			p <- INFERIEUR
+		FSi
+	FSi
+	Retourner p
+Fin
+
+Algo appelFonctions
+Variable hauteur, largeur, plusGrandeValeur : réel
+Variable affichage : entier
+Début
+	hauteur <- saisir("entrez la hauteur")
+	largeur <- saisir("entrez la largeur")
+	affichage <- comparaison(hauteur, largeur)
+	Selon affichage
+		cas EGAL :
+			écrire("C'est un carré")
+		cas SUPPERIEUR :
+			écrire("Format portrait")
+		cas INFERIEUR :
+			écrire("Format paysage")
+	FSelon
+	plusGrandeValeur <- plusGrand(valeur1, valeur2)
+	écrire("La plus grande valeur entre " & valeur1 & " et " & valeur2 & " est " &
+		plusGrandeValeur)
+	écrire(" test : est ce que cela écrit bien 12 ? " & plusGrand(7, 12))
+	écrire(" test : est ce que cela écrit bien 12 ? " & plusGrand(12, 7))
+	écrire(" test : est ce que cela écrit bien -7 ? " & plusGrand(-12, -7))
+	
+Fin
+######################################################################################
+Constante TAILLE : entier <- 4
+
+Algo batailleNavaleV2
+Variable plateauJeu : caractère[TAILLE][TAILLE]
+Variable plateauGagnant : booléen[TAILLE][TAILLE]
+Variable bateauDetruit : booléen
+Début
+	initialiserPlateaux(plateauJeu, plateauGagnant)
+	Répéter
+		afficherPlateau(plateauJeu)
+		bateauDetruit <- jouerUnCoup(plateauJeu, plateauGagnant)
+	TantQue non bateauDetruit FRépéter
+Fin
+
+Procédure initialiserPlateaux(plateauJeu : caractère[][], plateauGagnant : booléen[][])
+Variable i, j : entier
+Début
+	# initialiser les tableaux représentant le plateau de jeu
+	Pour j <- 0 à TAILLE - 1
+		Pour i <- 0 à TAILLE - 1
+			plateauJeu[j][i] <- '?'
+			plateauGagnant[j][i] <- FAUX
+		FPour
+	FPour
+	# postionnement aléatoire du bateau
+	i <- aléa(0, TAILLE - 1)
+	j <- aléa(0, TAILLE - 1)
+	plateauGagnant[j][i] <- VRAI
+Fin
+
+Procédure afficherPlateau(plateauJeu : caractère[][])
+Variable i, j : entier
+Début
+	Pour j <- 0 à TAILLE - 1
+		Pour i <- 0 à TAILLE - 1
+			écrireSRC(plateauJeu[j][i])
+		FPour
+		écrire()
+	FPour
+Fin
+
+Fonction jouerUnCoup(plateauJeu : caractère[][],
+					plateauGagnant : booléen[][]) Retourne booléen
+Variable colonne, ligne : entier
+Début
+	# demmander les coordonnées de tir	
+	colonne <- saisirEntre(1, TAILLE, "Quelle colonne ?")
+	ligne <- saisirEntre(1, TAILLE, "Quelle ligne ?")
+	# afficher le resultat
+	Si plateauGagnant[ligne-1][colonne-1] = FAUX Alors
+		écrire("Plouf à l'eau !")
+		# modifie le plateau de jeu
+		plateauJeu[ligne-1][colonne-1] <- '~'
+	Sinon
+		écrire("Boom ! Touché coulé ! Bravo vous avez gagné")
+	FSi
+	Retourner plateauGagnant[ligne-1][colonne-1]
+Fin
+
+Fonction saisirEntre(min : entier, max : entier, message : texte) Retourne entier
+Variable saisie : entier
+Début
+	saisie <- saisir(message)
+	TantQue saisie < min ou saisie > max
+		écrire("Cette valeur n'est pas correcte. Votre saisie doit être comprise entre "
+		& min & " et " & max & ". Ressaisissez...")
+		saisie <- saisir()
+	FTq
+	Retourner saisie
+Fin
+
+Constante TAILLE : entier <- 10
+
+Fonction random(min : entier, max : entier) Retourne entier[]
+Variable tableauRandom : entier[TAILLE]
+Variable i : entier
+Début
+	Pour i <- 0 à TAILLE - 1
+		tableauRandom[i] <- aléa(min, max)
+	FPour
+	Retourner tableauRandom
+Fin
+
+Algo testFonctionTab
+Variable tab, tab2 : entier[]
+Variable tab3 : entier[5]
+Variable i : entier
+Début
+	tab3[0] <- 14
+	tab3[1] <- 45
+	tab3[2] <- 7
+	tab3[3] <- 13
+	tab3[4] <- 2
+	i <- valeurMax(tab3, 5)
+	écrire("La plus grande valeur parmi 14, 45, 7, 13 et 2, c'est " & i)
+	tab <- random(-1000, 1000)
+	Pour i <- 0 à TAILLE - 1
+		écrire(tab[i])
+	FPour
+	tab2 <- random(7, 22)
+Fin
+
+Fonction valeurMax(tab : entier[], nbValeurs : entier) Retourne entier
+Variable valMax, i : entier
+Début
+	valMax <- tab[0]
+	Pour i <- 1 à nbValeurs - 1
+		Si tab[i] > valMax Alors
+			valMax <- tab[i]
+		FSi
+	FPour
+	Retourner valMax
+Fin
+
+
+TAILLE
+5
+
+tab
+14 - 45 - 7 - 13 - 2
+
+valMax
+45
+
+i
+5
+
+
+
+
+
+
+
+
+
+
+
