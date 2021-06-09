@@ -1,0 +1,10 @@
+Sachant qu'un chat manque 38 croquettes par jour et qu'un paquet en contient lui-même 64, écrire une classe "TasDeCroquettes" qui dira combien de paquets de croquettes il faut pour une journée en fonction du nombre de chat.
+
+Idéalement, on utilisera deux constantes d'entier CROQUETTES_PAR_SACHET ainsi que NB_CROQUETTES_JOURNALIER.
+Une seule variable d'entier : paquetsAchetes sera utilisée.
+
+
+L'interface utilisateur ressemblera à
+Combien de chats faut-il nourrir ?
+10
+Il faut acheter 6 paquets de croquettes.

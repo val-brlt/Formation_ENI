@@ -1,0 +1,34 @@
+﻿
+Il s'agit d'un programme qui compte le nombre d'itération avant qu'une vitesse dépasse sa vitesse maximum et 
+devienne une supervitesse. Et qui affiche le nombre itérations à la fin
+
+1/ Création de la classe nommé "Supervitesse"
+
+2/ Création d'une constante de type réel qui représente la vitesse max, et qui a pour valeur 300k  (VITESSE_MAX)
+(valeur qui correspond en mètres par seconde)
+
+3/ Création de la méthode principale qui est le point d'entrée pour tout programme java. 
+Elle possède la même syntaxe à chaque fois
+
+4/ On déclare trois variable : 
+- Une variable de type réel, qui réprésente la vitesse actuel et à qui on lui affecte la valeur  0 (vitesseActuelle)
+- Une variable de type entier qui représente l'acceleration et qui on lui affecte la valeur  9 (acceleration)
+- Une variable de type entier qui représente un compteur et qui on lui affecte la valeur  0 (compteur)
+
+
+5/ On crée ensuite une boucle : TANT QUE la vitesse actuelle est strictement infèrieur à la vitesse maximum ALORS
+	
+	SUR UNE MEME LIGNE
+	6/ On fait un calcul du compteur multiplié par l'acceleration et on additione la valeur de la vitesse actuelle
+	7/ On affecte à la variable vitesse actuelle, le résultat du calcul au dessus
+
+8/ On incrémente la variable compteur 
+
+9/ On danse la macarena pour optimiser le programme
+
+10/ On ferme la boucle
+
+11/ On écrit sur la console le texte suivant 
+Il aura fallu x itérations pour atteindre la SuperVitesse
+
+Le x correspond à la valeur de la variable compteur
