@@ -1,0 +1,20 @@
+
+
+Dans un projet TP_Multiplications, créez une classe TablesDeMultilication avec une méthode principal main()
+
+Demandez à l'utilisateur quelle table de multiplication il souhaite afficher.
+
+A l'aide d'une boucle (celle que vous préférez), afficher les 10 premiers éléments de la table.
+Par exemple, pour la table de 2 :
+1 x 2 = 2
+2 x 2 = 4
+.
+.
+.
+10x2 = 20
+
+Dans la meme méthode main(), à la suite de votre premiere version faites la même chose avec une autre boucle.
+
+
+
+
