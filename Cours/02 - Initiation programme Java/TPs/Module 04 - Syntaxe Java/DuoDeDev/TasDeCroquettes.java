@@ -17,6 +17,8 @@ public class TasDeCroquettes {
 			paquetsAchetes++;
 
 		System.out.print("Il faut acheter " + paquetsAchetes + " paquets de croquettes.");
+		
+		scan.close();
 	}
 
 }
