@@ -1,0 +1,21 @@
+
+Créer un projet RestoLibere qui va contenir la classe Resto.
+
+Etape 1
+----------
+Dans la classe Resto, définissez une méthode nommée afficherContentement qui ne renvoie rien et ne prend aucun parametre.
+
+Cette méthode affiche "Vive l'ouverture des restaurants ! "
+
+Detail technique : la methode doit etre static
+
+
+Modifiez la methode principale main(...) de la classe Resto  pour que l'exécution de la classe Resto affiche  "Vive l'ouverture des restaurants ! " sur la console.
+
+Etape 2 
+------------
+Dans la méthode principale main(...), nous voulons affichez la jauge  de personnes maximum dans un restaurant.
+
+Pour cela, créez une méthode obtenirJauge qui ne prend aucun paramètre et renvoie un entier représentant la jauge ( = nombre de ersonnes maximum dnas le restaurant)
+
+Modifiez la methode principale main(...) de la classe Resto  pour que l'exécution de la classe Resto affiche "Nous ne pouvons accueillir que 30 personnes." sur la console(après "Vive l'ouverture des restaurants ! ").
