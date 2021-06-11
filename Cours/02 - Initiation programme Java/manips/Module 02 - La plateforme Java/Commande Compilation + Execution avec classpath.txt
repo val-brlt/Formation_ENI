@@ -1,0 +1,11 @@
+D:\>javac HelloWorld.java
+
+D:\>java HelloWorld
+Bonjour le monde
+
+D:\>c:
+
+C:\Users\mdelord>java -classpath d: HelloWorld
+Bonjour le monde
+
+C:\Users\mdelord>
