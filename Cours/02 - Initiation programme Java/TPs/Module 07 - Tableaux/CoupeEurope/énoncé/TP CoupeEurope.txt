@@ -1,0 +1,9 @@
+Dans un projet nommé "CoupeEurope" , créez une classe EquipeDeFrance.
+
+Dans sa méthode principale main() :
+ 1- déclrer une variable de  type tableau de chaine de caracteres nommée "joueuses"
+ 2- initialisez le tableau avec une taille de 11 cases
+ 3- affichez le contenu du tableau à l'aide de classe Arrays
+ 4- valorisez chaque case avec un nom de joueuse
+ 5- affichez le contenu du tableau à l'aide de classe Arrays
+ 6- créez une méthode qui utilise une boucle for pour afficher contenu du tableau
