@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <style>
+        /*
+        https://la-cascade.io/flexbox-guide-complet/
+         */
+        .container{
+            display: flex;
+        }
+
+        .justifyRight{
+            justify-content: flex-end;
+        }
+
+        div.container div{
+            background-color: beige;
+            margin: 5px;
+        }
+
+        .flexWidth div{
+            /*
+            flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+            https://la-cascade.io/flex-grow/
+            https://la-cascade.io/flex-shrink/
+            https://la-cascade.io/flex-basis/
+            */
+            flex: 1 1 auto;
+        }
+
+        .alignItem{
+            /*align-items: flex-start | flex-end | center | baseline | stretch*/
+            align-items: stretch;
+        }
+
+        .flexGrow1{
+            flex-grow: 1;
+        }
+        .flexGrow2{
+            flex-grow: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div class="container justifyRight">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div class="container flexWidth">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div class="container alignItem">
+        <div>
+            1
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div class="container">
+        <div class="flexGrow1">1</div>
+        <div class="flexGrow2">2</div>
+        <div class="flexGrow1">3</div>
+        <div class="flexGrow1">4</div>
+    </div>
+
+    <div class="container">
+        <div style="order: 3;">1</div>
+        <div style="order: 2;">2</div>
+        <div style="order: 4;">3</div>
+        <div style="order: 1;">4</div>
+    </div>
+</body>
+</html>

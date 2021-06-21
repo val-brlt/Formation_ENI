@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form input</title>
+</head>
+<body>
+    <form action="" id="formulaire">
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" maxlength="10">
+        </div>
+        <div>
+            <label for="satisfaction">Satisfaction :</label>
+            <input type="range" min="0" max="100" step="5"
+                   value="50" name="satisfaction"
+                id="satisfaction">
+        </div>
+        <div>
+            <label for="age">Age :</label>
+            <input type="number" name="age" id="age" step="0.1">
+        </div>
+    </form>
+    <!-- attribut form permet de faire un submit sur un formulaire grâce à son id -->
+    <button type="submit" form="formulaire">Envoyer</button>
+</body>
+</html>

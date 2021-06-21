@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lien</title>
+    <style>
+        .cacher{
+            display:none;
+        }
+
+        /* Ordre des peudo-élément est important pour le <a> */
+        a:link
+        {
+            text-decoration: none;
+            color: cyan;
+        }
+        a:visited{
+            color: greenyellow;
+        }
+        a:hover{
+            text-decoration: underline;
+            color:red;
+        }
+
+        a:hover + .cacher{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <a href="index.html">Mon Lien</a>
+        <div class="cacher">Element caché</div>
+    </div>
+
+</body>
+</html>

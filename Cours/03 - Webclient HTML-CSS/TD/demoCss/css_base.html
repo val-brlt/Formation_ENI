@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Base</title>
+
+    <!-- déclaration externe -->
+    <link href="style/monStyle.css" rel="stylesheet" >
+
+    <!-- principe de cascade on peut redéfinir des classes dans ce fichier -->
+    <link href="style/secondStyle.css" rel="stylesheet" >
+
+    <!-- déclaration interne -->
+    <style type="text/css">
+        /* Selecteur css : nom d\'une balise, classe, id */
+        div{
+            color: blueviolet;
+        }
+
+        h1{
+            font-size: larger;
+        }
+    </style>
+
+
+</head>
+<body>
+    <code>Du code</code>
+    <!-- déclaration inline -->
+    <h1 style="font-size: small;background-color: aquamarine;" >CSS</h1>
+    <div>Mon texte de contenu</div>
+    <h2>Sous titre</h2>
+    <code>Autre code</code>
+    <div id="monId">
+        <!-- la classe est réutilisable -->
+        <p class="classDeux maClasse" >Du texte dans un id</p>
+        Texte div
+    </div>
+
+    <div class="maClasse">
+        Div avec maClasse
+    </div>
+
+    <div>
+        <div class="maClasse">
+            Autre div avec maClass
+        </div>
+    </div>
+
+    <form>
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom">
+        </div>
+        <div>
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="prenom">
+        </div>
+        <div>
+            <label for="age">Age :</label>
+            <input type="number" name="age" id="age">
+        </div>
+        <div>
+            <input type="submit" value="Valider">
+        </div>
+    </form>
+    <div>
+        <a href="">Lien simple</a>
+        <ul>
+            <li><a href="#">Element 1</a></li>
+            <li>Element 2</li>
+            <li><a href="#">Element 3</a></li>
+        </ul>
+    </div>
+    <div>
+        <h1>Mon titre h1</h1>
+        <h2>Sous titre h2</h2>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

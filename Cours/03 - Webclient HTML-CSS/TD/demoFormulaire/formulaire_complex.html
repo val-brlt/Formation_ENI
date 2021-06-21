@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head> 
+    <title>Les formulaires</title> 
+    <meta charset="UTF-8" /> 
+</head> 
+<body> 
+
+    <h1>Les formulaires</h1> 
+    
+    <!-- La déclaration du formulaire -->
+    <form name="monformulaire" action="" method="post">
+    
+    <p> 
+        <label for="nom">Votre nom :</label> 
+        <input type="text" name="nom" id="nom" 
+            placeholder="Votre nom ?" size="30" 
+            maxlength="10" autofocus="autofocus" /> 
+    </p>
+
+    <p> 
+        <label for="motdepasse">Votre mot de passe :</label>
+        <input type="password" name="motdepasse" id="motdepasse" /> 
+    </p>
+    
+    <p> 
+        <label for="ajouter">Avez-vous quelque chose à ajouter ?</label>
+        <br> 
+        <textarea name="ajouter" id="ajouter" rows="10" cols="30"></textarea> 
+    </p>
+    
+    <p> 
+        <label for="favorite">Votre logiciel préféré ?</label> 
+        <select name="favorite" size="1"> 
+            <optgroup label="Navigateur"> 
+                <option value="google">Google Chrome</option> 
+                <option value="firefox" selected="selected">Firefox</option> 
+                <option value="ie">Internet Explorer</option> 
+                <option value="opera" >Opera</option> 
+            </optgroup> 
+            <optgroup label="Players"> 
+                <option value="vlc" >VLC Media Player</option> 
+                <option value="winamp">Winamp Player</option> 
+            </optgroup> 
+        </select> 
+    </p>
+
+    <p> Votre pizza avec ?<br> 
+        <input type="checkbox" name="pizza1"/>Mozzarella<br> 
+        <input type="checkbox" name="pizza2" checked="checked"/>Jambon<br> 
+        <input type="checkbox" name="pizza3"/>Champignons<br> 
+        <input type="checkbox" name="pizza4"/>Poivrons<br>
+    </p>
+
+    <p> Votre mode de paiement ?<br> 
+       <input type="radio" name="mode"/>Liquide<br> 
+       <input type="radio" name="mode"/>Chèque<br/>
+       <input type="radio" name="mode" checked="checked"/>Carte bancaire<br>
+    </p>
+    
+    <p>
+        Votre nom : <input type="text" name="nom" placeholder="Votre nom ?" /> 
+    </p>
+
+    
+    </form>
+    
+    
+    <form name="monformulaire2" action="action.php" method="post"> 
+        <fieldset> 
+            <legend>Votre pizza</legend> 
+            <input type="checkbox" name="n1">Mozzarella<br>
+            <input type="checkbox" name="n2">Jambon<br>
+            <input type="checkbox" name="n3">Champignons<br>
+        </fieldset> 
+        <fieldset> 
+            <legend>Votre mode de paiement</legend> 
+            <input type="radio" name="mode">Chèque<br>
+            <input type="radio" name="mode">Carte bancaire<br>
+        </fieldset> 
+        <input type="reset" value="Réinitialiser" /> 
+        <input type="submit" value="Commander" /> 
+    </form>
+    <br>
+    <br>
+    <button type="button" onclick="alert('Merci!');"> 
+        Cliquez-moi ! 
+    </button><br><br> 
+    <button type="submit"> 
+        <img src="images/ok.png" width="25px" alt="Confirmer" />
+        Confirmer 
+    </button>
+    
+    <br><br>
+    <form> Votre nom : <input type="text" name="nom" required="required" /> 
+        <br><br>
+        
+        <p> 
+            Votre email : <input type="email" name="email" size="30"/> 
+        </p>
+        <br>
+        <p> 
+            Votre site web : <input type="url" name="url" size="30"/> 
+        </p>
+
+        <p> 
+            Date d’arrivée : <input type="date" name= "dateArrivee" size="20"/>
+            <br> 
+            Date de départ : <input type="date" name= "dateDepart" size="20"/>
+            <br> 
+        </p>
+        
+        
+        <p> 
+            Date d’expiration : <input type="month" name= "dateE" size="20"/> 
+        </p>
+        
+        <p> 
+            Semaine réservée : <input type="week" name="dateS" size="20"/> 
+        </p>
+        
+        <p> 
+            Heure d’arrivée : 
+            <input type="time" name="dateT" min="11:00" max="23:00" step="900" /> 
+        </p>
+
+        <p> 
+            Date et heure d’arrivée : 
+            <input type="datetime-local" name="dateDT" /> 
+        </p>
+
+
+        <p> 
+            Couleur de la police : 
+            <input type="color" name="couleur" /> 
+        </p>
+
+        <p> 
+            Nombre d’article(s) souhaité(s) : 
+            <input type="range" name="curseur" min="1" max="5" value="3" step="1" /> 
+        </p>
+
+        <p> 
+            Nombre d’article(s) souhaité(s) : 
+            <input type="number" name="number" min="1" max="5" value="3" step="1" /> 
+        </p>
+
+        <button type="submit">Soumettre</button> 
+    </form>
+    <br>
+    <p>
+        Votre nom : <input type="text" name="nom" autofocus="autofocus" /> 
+    </p>
+    
+    
+    
+</body> 
+</html>
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <meta charset="utf-8" /> 
+        <title>Exemple Liste</title> 
+        <style> 
+            body{ margin-left: 150px; }
+            .rond { list-style-type: circle; } 
+            .carre { list-style-type: square; } 
+            .nombre1 { list-style-type: decimal; } 
+            .nombre2 { list-style-type: decimal-leading-zero; } 
+            .romain1 { list-style-type: upper-roman; } 
+            .romain2 { list-style-type: lower-roman; } 
+            .lettre1 { list-style-type: upper-alpha; } 
+            .lettre2 { list-style-type: lower-alpha; } 
+            .jedi { list-style-image: url("images/icon-yoda.png"); } 
+            .sith { list-style-image: url(images/icon-darkvador.png); } 
+            .in { list-style-position: inside; } 
+            .out { list-style-position: outside; }
+            .none{list-style: none}
+        </style>       
+    </head> 
+    <body> 
+       <h1>Liste</h1>
+       <h3>La saga Star Wars</h3>
+       <ul> 
+           <li class="jedi">Yoda</li> 
+           <li class="jedi">Luc Skywalker</li> 
+           <li class="sith">Dark Vador</li> 
+           <li class="sith">Palpatine</li> 
+        </ul> 
+        
+        <ol> 
+            <li class="nombre1">Voyage galactique 1</li> 
+            <li class="nombre2">Voyage galactique 2</li> 
+            <li class="romain1">Voyage galactique 3</li> 
+            <li class="romain2">Voyage galactique 4</li>
+            <li class="lettre1 in"> Voyage galactique 5<br> Relativité restreinte </li> 
+            <li class="lettre2 out"> Voyage galactique 6<br> 7 millions d'années-lumière </li> 
+        </ol> 
+
+    <ul class="none">
+        <li>Element</li>
+        <li>Element</li>
+        <li>Element</li>
+        <li>Element</li>
+        <li>Element</li>
+    </ul>
+    </body> 
+</html>

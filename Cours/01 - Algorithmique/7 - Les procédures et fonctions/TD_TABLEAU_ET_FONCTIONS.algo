@@ -1,0 +1,37 @@
+Constante TAILLE : entier <- 10
+
+Fonction create_tab(min : entier, max : entier) Retourne entier[]
+Variable tab : entier [TAILLE]
+Variable i : entier
+Début
+	Pour i <- 0 à TAILLE - 1 
+		tab[i] <- aléa(min, max)
+	FPour
+	Retourne tab
+Fin 
+
+Fonction valeur_max(tab : entier[]) Retourne entier
+Variable val_max, i : entier
+Début 
+	val_max <- tab[0]
+	Pour i <- 1 à TAILLE - 1
+		Si tab[i] > val_max Alors
+			val_max <- tab[i]
+		FSi
+	FPour
+	Retourne max_valeur
+Fin 
+
+Algo tab_val
+Variable max, min, i : entier
+Variable tab : entier[TAILLE]
+Début
+	min <- saisir ("Valeur minimum du tableau")
+	max <- saisir ("Valeur maximum du tableau")
+	tab <- create_tab(min, max)
+	écrire(" Tableau : ")
+	Pour i <- 0 à TAILLE - 1 
+		écrire(tab[i])
+	FPour
+	écrire("La plus grande valeur du tableau est : " & valeur_max(tab))
+Fin 

@@ -1,0 +1,5 @@
+/* cascade, la définition de la couleur est écraser
+si les deux classes sont définies dans un élément */
+.classDeux{
+    color: grey;
+}

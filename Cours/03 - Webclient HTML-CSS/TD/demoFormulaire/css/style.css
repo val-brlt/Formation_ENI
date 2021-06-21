@@ -1,0 +1,146 @@
+/*SELECTEURS DE BASES DE STYLES*/
+/*******************************/
+/*selecteur universel*/
+* {
+    font-family: Segoe UI, Calibri; /*si Segoe non installé sur client, Calibri utilisé*/
+    color: #3d3d3d;
+}
+
+/*utiliser une police perso*/
+/*
+@font-face {
+     font-family: myFirstFont;
+     src: url(sansation_light.woff);
+ }
+ */
+
+/*selecteur balise*/
+body {
+    width: 1003px; /*1024px - 21px (correspond à la largeur de la scrollbar verticale)*/
+                   /* permet donc l'affichage sans scroll sur un écran de 1024px */
+    margin: auto;
+}
+
+/*selecteur imbriqué*/
+header img {
+    opacity: 0.8;
+}
+
+/*selecteur multi balises*/
+/*
+header, nav, main, aside, footer, div, ul {
+    border: solid 1px #333;
+}
+*/
+
+/*classe de styles*/
+.contenu {
+    padding: 5px; /*5px sur toutes les marges externes*/
+    box-shadow: 1px 1px 12px #555; /*effet d'ombre (cf http://www.cssmatic.com/box-shadow)*/
+                                   /*valider l'utilisation de cette balise (cf http://caniuse.com/)*/
+    margin-bottom: 20px;    /*pousser l'élément suivant à 20px*/ 
+}
+
+/*identifiant de styles*/
+#paragraphe1 {
+    color: blue;
+    font-style: italic;
+    text-shadow: 1px 1px 12px #555;
+}
+
+/*COMPLEMENTS SUR LES STYLES*/
+/****************************/
+
+/*Mise en forme du MENU*/
+nav ul{
+    list-style: none; /*suppression du style liste à puce*/
+    background-color: #333;
+    height: 30px;
+}
+
+nav ul li{
+    float: left; /*chaque bloc <li> se place à droite du précédent s'il y a de
+                 la place - Attention à la limite des 1003px*/
+}
+
+nav a{
+    color: white;
+    text-decoration: none; /*supprime le style lien (souligné)*/
+    /*margin: 0 20px 0 20px;*/
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: solid 1px #ccc;
+    display: block; /*passe le lien en type bloc pour ajuster sa hauteur*/
+    height: 30px;
+    vertical-align: middle;
+    line-height: 30px; /*la hauteur de la ligne est égale à la hauteur de son
+                       contenu*/
+}
+
+/*survol du lien*/
+nav a:hover{
+    background-color: pink;
+}
+
+/*supprime le bord <a> du dernier <li>*/
+nav ul li:last-child a{
+    border: none;
+}
+
+/*Mise en forme du TITRE*/
+ h1{
+     font-size: 50px;
+     font-weight: normal; /*désactive la mise en gras*/
+     border: solid 1px red;
+     background-color: rgba(255,0,0,0.3);
+     margin: 50px;
+     padding: 10px;
+     border-radius: 10px; /*arrondi des boites*/
+     box-shadow: 10px 20px 30px rgba(219, 26, 30, 0.5); /*ombre sur les boites*/
+ }
+ h2{
+     border: solid 1px green;
+     font-size: 30px;
+     font-weight: normal;
+     margin: 50px;
+     padding: 10px;
+     background-color: rgba(0,255,0,0.3);
+     border-radius: 0px 10px 20px 30px; /*arrondi des boites*/
+     box-shadow: 10px 20px 30px rgba(51, 205, 3, 0.5); /*ombre sur les boites*/
+ }
+
+/*Mise en forme PUB*/
+aside div{
+    background-color: #f0a30a;
+    width: 31%; /*chaque div occupe 1/3 de page*/
+    margin: 0px 5px 5px 5px; /*0px 5px*/ /*marges externes*/
+    display: inline-block;  /*affiche les blocs en ligne*/
+    padding: 0px 5px 15px 5px; /*marges internes*/
+}
+
+/*une couleur différente pour la première div de l'aside (pseudo-classe)*/
+aside div:first-child{
+    background-color: #dc4fad;
+}
+
+/*une couleur différente pour la dernière div de l'aside (pseudo-classe)*/
+aside div:last-child{
+    background-color: #e51400;
+    margin-bottom: 15px;
+}
+
+
+/*Mise en forme FOOTER*/
+ footer{
+     text-align: center;
+ }
+
+/*Mise en forme TABLE*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td, th {
+    padding: 5px;
+}

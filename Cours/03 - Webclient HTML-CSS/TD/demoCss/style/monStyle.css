@@ -1,0 +1,71 @@
+/*
+author: Laurent
+exemple de fichier externe
+ */
+
+*{
+    /* veux dire tous les éléments */
+}
+
+body{
+    /* un style sur tout le body (héritage par cascade) */
+}
+
+/* définir plusieurs sélécteurs séparer par des virgules */
+h1, h2, h3, h4, h5, h6{
+    font-family: "Comic Sans MS", Arial, serif;
+}
+
+p{
+    color: crimson;
+}
+
+/* classe défini par "un point" suivi du nom de la classe */
+.maClasse{
+    font-weight: bold;
+    color: chocolate;
+}
+/* cascade, la définition de la couleur est écraser
+si les deux classes sont définies dans un élément */
+.classDeux{
+    color: darkslateblue;
+}
+
+h2.maClasse{
+    /* mon style*/
+}
+
+/* ID défini par # suivi de l'id */
+#monId{
+    font-style: italic;
+    color: darkorange;
+}
+
+/* définir un chemin d'éléments */
+div div.maClasse{
+    color: darkorange;
+}
+
+/* selecteur en fonction d'un attribut */
+input[type="submit"]{
+    background-color: burlywood;
+}
+
+input[id="nom"]{
+    background-color: darkgrey;
+}
+
+/* > pour définir un enfant direct */
+li > a{
+    background-color: aqua;
+}
+
+/* + permet de spécifier l'élément adjacent */
+h1 + h2{
+    font-size: xxx-large;
+}
+
+/* éléments qui suivent */
+div ~ code{
+    background-color: forestgreen;
+}

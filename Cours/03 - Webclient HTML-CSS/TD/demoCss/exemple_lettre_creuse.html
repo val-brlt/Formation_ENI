@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head> 
+    <title>Exemple lettre creuse</title> 
+    <meta charset="UTF-8" />
+    <style>
+        /* Chrome, Safari, iOS, Android browsers */ 
+        .stroke { 
+            font-size: 72px; 
+            -webkit-text-stroke: 2px #000; 
+            -webkit-text-fill-color: transparent; 
+        }
+        
+         /* Firefox, Internet Explorer, Opera */ 
+        .stroke2 { 
+            font-size: 72px; 
+            color: white; 
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="stroke">STAR WARS<br> Episode III</div>
+    <div class="stroke2">STAR WARS<br> Episode IV</div>
+</body>
+</html>

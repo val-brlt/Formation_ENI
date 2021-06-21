@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background</title>
+    <style>
+        .imageB{
+            height: 800px;
+            width: 100%;
+            background-color: cyan;
+            /* definir le chemin vers l'image */
+            background-image: url("images/clouds.jpg");
+
+            background-repeat: no-repeat;
+
+            background-position: 50px 50px;
+        }
+
+        .imageA{
+            height: 800px;
+            width: 100%;
+            background: url("images/sun.jpg") magenta no-repeat center;
+        }
+
+        .imageC{
+            height: 800px;
+            width: 100%;
+            /* l'ordre des images est importante */
+            background:  url("images/sun.jpg") fixed no-repeat top right,
+                    url("images/clouds.jpg") ;
+        }
+    </style>
+</head>
+<body>
+    <div class="imageC">
+
+    </div>
+</body>
+</html>

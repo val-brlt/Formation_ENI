@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemple Transformation 3D !</title>
+	<meta charset="UTF-8" />
+	<style>
+		/*.scene { perspective: 500px;	}
+		.objet3D {transform-style: preserve-3d;
+			transform: rotateX(-40deg);	}*/
+		.scene {
+			perspective-origin: top left;
+			perspective: 500px;
+		}
+		.objet3D {
+			transform: rotateX(-30deg);
+		}
+		h2 {
+			border: 1px solid black;
+			margin: 25px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Exemple Transformation 3D !</h1>
+	<article class="scene">
+		<h2 class="objet3D">Formation <br> HTML</h2>
+	</article>
+</body>
+</html>

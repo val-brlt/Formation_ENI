@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Taille</title>
+    <style>
+        body{
+            font-size: 18px;
+        }
+
+
+        .pixel{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+        .parent{
+            height: 200px;
+            width: 200px;
+            background-color: darkseagreen;
+        }
+
+        .pourcent{
+            width: 50%;
+            height: 50%;
+            background-color: bisque;
+        }
+
+        .emText{
+            font-size: 1em;
+        }
+
+        .remText{
+            font-size: 1.6rem;
+        }
+
+        .vhvw{
+            height: 25vh;
+            width: 25vw;
+            background-color: coral;
+        }
+
+        .vminvmax{
+            height: 50vmin;
+            width: 50vmax;
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://www.codeur.com/tuto/css/unite-de-mesure-taille-px-em-rem/ -->
+
+    <div class="pixel">100px * 100px</div>
+    <br>
+    <div class="parent">
+        <div class="pourcent">50%*50%</div>
+    </div>
+
+    <p class="emText">Texte em : 1em = taille police défini dans le body</p>
+    <p class="remText">Texte rem : s'adapte au zoom du support</p>
+
+    <div class="vhvw">
+        « vw » correspond ainsi à 1/100 e ou 1% de la largeur de la fenêtre et de même pour « vh » qui équivaut à 1/100 e ou 1% de la hauteur de la fenêtre.
+        <blockquote>nécessite le meta viewport</blockquote>
+    </div>
+
+    <br>
+
+    <div class="vminvmax">
+        Les unités « vmin » et « vmax » équivalent respectivement à 1/100 e de la dimension la petite et à 1/100 e de la dimension la grande du viewport.
+
+        <blockquote>nécessite le meta viewport</blockquote>
+    </div>
+
+    <iframe height="250" width="100%" src="exemple_bordure_arrondi.html"></iframe>
+</body>
+</html>

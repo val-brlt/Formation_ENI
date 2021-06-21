@@ -1,0 +1,140 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(212, 212, 212);
+    font-family: 'roboto';
+}
+
+@font-face {
+    font-family: "lemon";
+    src: url("../fonts/LEMONMILK-Regular.otf");
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto-Light-webfont.woff");
+}
+
+@font-face {
+    font-family: "roboto_bold";
+    src: url("../fonts/Roboto-Bold-webfont.woff");
+}
+
+
+/* HEADER */
+
+.header_ {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.compte {
+    display: flex;
+}
+
+#avatar {
+    border: 5px solid rgb(160, 212, 136);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.compte p {
+    padding: 5px;
+}
+
+.logo h2 {
+    color: rgb(48, 48, 48);
+    margin-left: 10px;
+    font-size: 45px;
+    font-family: 'lemon';
+}
+
+
+/* NAV BAR */
+
+nav {
+    border-top: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 50px;
+    background-color: rgb(129, 129, 129);
+    border: 2px solid black;
+    margin-left: 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-family: 'roboto_bold';
+}
+
+nav ul li:hover {
+    background-color: rgb(170, 170, 170);
+}
+
+@media all and (max-width: 670px) {
+    nav ul li a {
+        font-size: 17px;
+    }
+}
+
+
+/* EPICA */
+
+.epica {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.epica img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+/* BIOGRAPHIE */
+
+.biographie {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 20px;
+}
+
+
+/* DICOGRAPHIE & MEMBRES */
+
+.disc_memb {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.discographie {
+    padding-right: 200px;
+}

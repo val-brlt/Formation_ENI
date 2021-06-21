@@ -1,0 +1,29 @@
+.linebaseShort .a {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.linebaseShort .b {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.linebaseShort .c {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.linebaseShort .d {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.linebaseShort .e {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.linebaseShort .f {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}

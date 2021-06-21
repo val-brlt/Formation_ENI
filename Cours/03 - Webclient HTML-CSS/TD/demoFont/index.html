@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Font</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+        .policeSize{
+            /*
+            font-size: larger;
+            font-size: 26px;
+            */
+            font-size: 150%;
+        }
+
+        .policeColor{
+            color: indianred;
+            text-align: justify;
+        }
+
+        .letterSpacing{
+            letter-spacing: 10px;
+        }
+
+        .textTransform{
+            /* lowercase, capitalize, uppercase */
+            text-transform: capitalize;
+            /*underline, overline, line-through*/
+            text-decoration: line-through;
+        }
+
+        .fontGoogle{
+            font-family: 'Roboto', sans-serif;
+        }
+
+        @font-face {
+            font-family: '1942';
+            src: url("1942_report/1942-webfont.woff") format('woff'),
+                url("1942_report/1942-webfont.woff2") format('woff2'),
+                url("1942_report/1942-webfont.svg") format('svg');
+        }
+
+        .fontInterne{
+            font-family: '1942', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <p class="policeSize">
+        Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatio est et minime accipienda cum in ceteris peccatis, tum si quis contra rem publicam se amici causa fecisse fateatur.
+    </p>
+    <p class="policeColor">
+        Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatio est et minime accipienda cum in ceteris peccatis, tum si quis contra rem publicam se amici causa fecisse fateatur.
+        <span>Autre texte</span><a href="">Lien</a>
+    </p>
+    <p class="letterSpacing">
+        Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatio est et minime accipienda cum in ceteris peccatis, tum si quis contra rem publicam se amici causa fecisse fateatur.
+    </p>
+    <p class="textTransform">
+        Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatio est et minime accipienda cum in ceteris peccatis, tum si quis contra rem publicam se amici causa fecisse fateatur.
+    </p>
+    <p class="fontGoogle">
+        Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatio est et minime accipienda cum in ceteris peccatis, tum si quis contra rem publicam se amici causa fecisse fateatur.
+    </p>
+
+    <p class="fontInterne">
+        Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatio est et minime accipienda cum in ceteris peccatis, tum si quis contra rem publicam se amici causa fecisse fateatur.
+    </p>
+</body>
+</html>

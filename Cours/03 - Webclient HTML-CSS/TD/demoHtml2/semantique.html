@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Description de la page pour
+      un moteur de recherche" >
+    <meta name="keywords" content="balise, html, description" >
+
+    <meta author="Moi">
+    <title>Demo Sémantique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <!-- Commentaire HTML -->
+    <!-- css -->
+    <style></style>
+    <!-- javascript -->
+    <script></script>
+  </head>
+  <body>
+    <!-- Tous ce qui est visuel -->
+    <!-- entête de la page -->
+    <header>
+      <!-- balise img pour afficher une image -->
+      <img src="images/logo.jpg" alt="Logo ENI" >
+
+      <!-- balise sémantique de navigation -->
+      <nav>
+        <!-- liste -->
+        <ul>
+          <!-- lien relatif -->
+          <li><a href="dossier2/page2.html">Menu 1</a></li>
+          <li><a href="image.html">Image</a></li>
+          <li><a href="#">Menu 3</a></li>
+          <!-- lien absolu -->
+          <li><a href="http://www.google.fr"
+                 target="_blank">Google</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- contenu -->
+    <main>
+      <!-- titre -->
+      <h1>Titre principale</h1>
+      <h2>Titre secondaire</h2>
+      <!-- information importante du site -->
+      <article>
+        <p id="paragraphe1" >Contenu du paragraphe 1</p>
+        <p>Texte du deuxième paragraphe <br> avec un saut de ligne <br>
+          espace             espace</p>
+        <!-- séparation avec une ligne -->
+        <hr>
+        <!-- liste ordonnée -->
+        <ol>
+          <li>Elément un</li>
+          <li>Elément deux
+            <ul>
+              <li>Sous élément 1</li>
+              <li>Sous élément 2</li>
+            </ul>
+          </li>
+        </ol>
+      </article>
+      <!-- à coté, pub, ... -->
+        <aside>
+          <div>
+            <h3>Zone 1</h3>
+            <!-- ancre html -->
+            Zone de <span>texte</span> <a href="#paragraphe1">pub 1</a>
+          </div>
+          <div>
+            <h3>Zone 2</h3>
+            Zone de <b>texte</b> <a href="dossier2/page2.html#ancre2">Page 2</a>
+          </div>
+          <div>
+            <h3>Zone 3</h3>
+            Zone de <i>texte</i>
+          </div>
+        </aside>
+
+        <div>
+          <!-- tableau en html -->
+          <table border="1">
+            <tr><!-- ligne -->
+              <th>Entête 1</th><!-- colonne entête -->
+              <th>Entête 2</th>
+              <th>Entête 3</th>
+            </tr>
+            <tr>
+              <td>Valeur 1</td><!-- colonne de valeur -->
+              <td>Valeur 2</td>
+              <td>Valeur 3</td>
+            </tr>
+          </table>
+        </div>
+
+    </main>
+
+      <!-- pied page -->
+      <footer>
+        <p>&copy; ENI Ecole</p>
+        <a href="#" title="Formulaire d'inscription">Inscription</a>
+        <!-- envoyer un email -->
+        <a href="mailto:mail@campus-eni.fr">
+          <img src="images/logo.jpg" alt="Logo ENI" >
+        </a>
+      </footer>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

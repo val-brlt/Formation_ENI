@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Display</title>
+    <style>
+        .hauteur{
+            height: 100px;
+            background-color: coral;
+        }
+
+        .inline{
+            display: inline;
+        }
+
+        .inlineBlock{
+            display: inline-block;
+        }
+
+        .cacher{
+            display: none;
+        }
+
+        /* Flex */
+        .container{
+            display: flex;
+            /*flex-direction: column-reverse;*/
+            /* il faut enlever le flex des enfants pour le justify-content*/
+            justify-content: flex-end;
+        }
+
+        .item{
+            /* permet de déterminer l'importance de chaque élément
+            flex: 1;
+             */
+            height: 80px;
+            width: 80px;
+            background-color: grey;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .order1{
+            order: 10;
+        }
+        .order2{
+            order: 20;
+        }
+        .order3{
+            order: 30;
+        }
+        .order4{
+            order: 40;
+        }
+    </style>
+</head>
+<body>
+    <div class="hauteur">
+        Elément de type block
+    </div>
+    <a href="" class="hauteur inlineBlock">Element de type inline</a> <span>Autre élément inline</span>
+    <p class="cacher">
+        texte cacher
+    </p>
+    <p>Element visible</p>
+    <div class="container">
+        <div class="item order2">1</div>
+        <div class="item order1">2</div>
+        <div class="item order3">3</div>
+        <div class="item order4">4</div>
+    </div>
+</body>
+</html>

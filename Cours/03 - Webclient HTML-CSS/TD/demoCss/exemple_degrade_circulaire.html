@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+	<meta charset="utf-8" />
+	<title>Exemple dégradés circulaires</title>
+	<style>
+		/*
+		https://developer.mozilla.org/en-US/docs/web/CSS/radial-gradient()
+		 */
+
+		.gradient {
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			background: radial-gradient(top, circle, #000, #fff);
+			background: -webkit-radial-gradient(top, circle, #000, #fff);
+			background: -moz-radial-gradient(top, circle, #000, #fff);
+			background: -ms-radial-gradient(top, circle, #000, #fff);
+			background: -o-radial-gradient(top, circle, #000, #fff);
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="gradient"></div>
+</body> 
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Position</title>
+    <style>
+        .publication{
+            background-color: blueviolet;
+            position: absolute;
+            top:0;
+            right: 0px;
+            margin: 0;
+        }
+
+        article{
+            position: relative;
+        }
+
+        h1{
+            position: fixed;
+            top:15px;
+            left:15px;
+        }
+
+        /*z-index*/
+        .relative{
+            position: relative;
+            height: 400px;
+        }
+
+        .relative div{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+        }
+
+        .bloc1{
+            background-color: red;
+            z-index: 10;
+            top:15px;
+            left:15px;
+        }
+
+        .bloc2{
+            background-color: blueviolet;
+            z-index: 20;
+            top:45px;
+            left:45px;
+        }
+
+        .bloc3{
+            background-color: coral;
+            z-index: 30;
+            top: 80px;
+            left: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Mon titre de page fixed</h1>
+    <article>
+        <h2>Titre de l'article</h2>
+        <p class="publication">publié le 16/06/2021</p>
+        <p>
+            Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes
+            nec faciamus rogati. Turpis enim excusatio est et minime accipienda
+            cum in ceteris peccatis, tum si quis contra rem publicam se amici
+            causa fecisse fateatur. Etenim eo loco, Fanni et Scaevola, locati
+            sumus ut nos longe prospicere oporteat futuros casus rei publicae.
+            Deflexit iam aliquantum de spatio curriculoque consuetudo maiorum.
+        </p>
+    </article>
+    <article>
+        <h2>Titre de l'article</h2>
+        <p class="publication">publié le 16/06/2021</p>
+        <p>
+            Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes
+            nec faciamus rogati. Turpis enim excusatio est et minime accipienda
+            cum in ceteris peccatis, tum si quis contra rem publicam se amici
+            causa fecisse fateatur. Etenim eo loco, Fanni et Scaevola, locati
+            sumus ut nos longe prospicere oporteat futuros casus rei publicae.
+            Deflexit iam aliquantum de spatio curriculoque consuetudo maiorum.
+        </p>
+    </article>
+    <article>
+        <h2>Titre de l'article</h2>
+        <p class="publication">publié le 16/06/2021</p>
+        <p>
+            Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes
+            nec faciamus rogati. Turpis enim excusatio est et minime accipienda
+            cum in ceteris peccatis, tum si quis contra rem publicam se amici
+            causa fecisse fateatur. Etenim eo loco, Fanni et Scaevola, locati
+            sumus ut nos longe prospicere oporteat futuros casus rei publicae.
+            Deflexit iam aliquantum de spatio curriculoque consuetudo maiorum.
+        </p>
+    </article>
+    <div class="relative">
+        <div class="bloc1">Z-index 1</div>
+        <div class="bloc2">Z-index 2</div>
+        <div class="bloc3">Z-index 3</div>
+    </div>
+</body>
+</html>

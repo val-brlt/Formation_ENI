@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Demo Formulaire</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/formulaire.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        
+        <header>
+            <!--section LOGO-->
+            <img src="img/logo.jpg" alt="ENI Ecole" title="Info bulle ENI Ecole"/>
+            
+            <!--section MENU-->
+            <nav>
+                <ul>
+                    <li><a href="#">Menu 1</a></li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                    <li><a href="#">Menu 4</a></li>   
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <!--enctype obligatoire pour <input type="file">-->
+            <!--method necessaire pour la transmission des données (get par défaut, préférer post)-->
+            <form name="inscription" action="#" enctype="multipart/form-data" method="post">
+                <fieldset>
+                    <legend>Inscription</legend>
+                    <label for="civilite">Civilité :</label>
+                    <select name="civilite" id="civilite">
+                        <option>Mme</option>
+                        <option>M.</option>
+                    </select><br><br>
+                    <label for="nom">Nom :</label>
+                    <input name="nom" type="text" id="nom" placeholder="Votre nom ici..." required autofocus><br><br>
+                    <label for="prenom">Prénom :</label>
+                    <input name="prenom" type="text" id="prenom" placeholder="Votre prénom ici..."><br><br>
+                    <label for="datenaissance">Date de naissance :</label>
+                    <input name="datenaissance" type="date" id="datenaissance"><br><br>
+                    <label for="email">Email :</label>
+                    <input name="email" type="email" id="email" placeholder="Votre email ici..." required><br><br>
+                    <label>Profil :</label>
+                    <input name="stagiaire" type="checkbox" value="stagiaire" id="stagiaire">
+                        <label for="stagiaire" class="choicelabel">Stagiaire</label>
+                    <input name="formateur" type="checkbox" value="formateur" id="formateur">
+                        <label for="formateur" class="choicelabel">Formateur</label><br><br>
+                    <label for="cv">Cv :</label>
+                    <input name="cv" type="file" id="cv"><br><br> <!--attribut enctype balise form-->
+                    <label for="telephone">Téléphone :</label>
+                    <input name="telephone" type="tel" id="telephone" placeholder="Votre téléphone ici..."
+                           pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$"><br><br>
+                    <label for="password">Mot de passe :</label>
+                    <input name="password" type="password" id="password" placeholder="Votre mot de passe ici..."><br><br>
+                    <label>Sexe :</label>
+                    <input name="sexe" type="radio" value="masculin" id="masculin">
+                        <label for="masculin" class="choicelabel">Masculin</label>
+                    <input name="sexe" type="radio" value="feminin" id="feminin">
+                        <label for="feminin" class="choicelabel">Féminin</label><br><br>
+                    <label for="commentaire">Commentaire :</label>
+                    <textarea name="commentaire" id="commentaire" placeholder="Votre commentaire ici..."></textarea><br><br>
+                    <div>
+                        <input name="btValider" type="submit" value="valider" title="Validez votre inscription">
+                        <input name="btAnnuler" type="reset" value="annuler" title="Annulez votre saisie">
+                    </div>
+                </fieldset>
+
+            </form>
+
+        </main>
+        <hr>
+        
+        <!--section PIED DE PAGE-->
+        <footer>
+            <p>&copy; ENI Ecole Rennes - ZAC de la Conterie, 8 rue Léo Lagrange, 35131 Chartres-de-Bretagne - Téléphone : 02 28 03 17 28</p>
+            <p>&copy; ENI Ecole Nantes - ZAC du Moulin Neuf - 2 B, rue Benjamin Franklin - BP 80009 44801 SAINT-HERBLAIN Tél. 02 28 03 17 28</p>
+            <p><a href="#" title="Accéder au formulaire de contact">Inscription</a></p>
+            <p><a href="#" title="Accéder au formulaire de contact BootStrap">Inscription BootStrap</a></p>
+            <a href="mailto:ecole@eni-ecole.fr">
+                <img src="img/logo.jpg" alt="Contacter Eni Ecole" title="Contacter Eni Ecole"/>
+            </a>
+        </footer>
+    </body>
+</html>

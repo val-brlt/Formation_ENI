@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MyMusic</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+</body>
+<header>
+    <img src="images/mymusic_logo.png" alt="Logo MyMusic" />
+    <h2>My Music</h2>
+    <img src="images/avatar/avatar-tux_picachu.jpg " alt="Avatar pikachu" style="
+        width : 100px;
+        height: 100px;
+        " />
+    <p><a href="#login">Mon compte</a> |
+        <a href="#logout">Déconnexion</a>
+    </p>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Accueil</a>
+            </li>
+            <li>
+                <a href="Formulaire.html">Formulaire</a>
+            </li>
+            <li>
+                <a href="media_player.html">Media Player</a>
+            </li>
+            <li>
+                <a href="audio_player.html">Audio Player</a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+<main>
+
+    <h1> Mon compte</h1>
+    <form action="GET">
+        <fieldset>
+            <legend>Vos informations personelles : </legend>
+            <label for="nom">Nom ?</label><br>
+            <input type="text" name="nom" id="nom" placeholder="Votre nom ?" /><br>
+            <label for="date">Date de naissance : </label><br>
+            <input type="date" name="date" id="date" /><br>
+            <label for="prenom">Prenom ?</label><br>
+            <input type="text" name="prenom" id="prenom" placeholder="Votre prenom ?" /><br>
+            <label for="groupe">Groupe préféré :</label><br>
+            <select><br>
+                <optgroup label="Metal">
+                    <option value="Epica">Epica</option>
+                    <option value="symfony_X">Symfony X</option>
+                    <option value="Sabaton">Sabaton</option>
+                    <option value="Stratovirus">Stratovirus</option>
+                    <option value="Nightwish">Nightwish</option>
+                </optgroup>
+                <optgroup label="Rap">
+                    <option value="Eminem">Eminem</option>
+                    <option value="NTM">NTM</option>
+                </optgroup>
+                <optgroup label="Rock">
+                    <option value="Oasis">Oasis</option>
+                    <option value="U2">U2</option>
+                </optgroup>
+        </select><br>
+            <label for="mail">Email :</label><br>
+            <input type="mail" name="mail" id="mail" placeholder="Votre email ?" /><br>
+            <label for="tel">téléphone :</label><br>
+            <input type="tel" name="tel" id="tel" placeholder="Votre téléphone ?" /><br>
+            <label for="password">Mot de passe :</label><br>
+            <input type="password" name="password" id="password" /><br>
+            <label for="password2">Répéter le mot de passe :</label><br>
+            <input type="password" name="password2" id="password2" /><br>
+        </fieldset>
+        <!-- Formule abo -->
+        <fieldset>
+            <legend>Votre formule d'abonnement :</legend>
+
+            <table>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="radio" name="Prenium+" />Prenium+</td>
+                    <td><input type="radio" name="Prenium" />Prenium</td>
+                    <td><input type="radio" name="Discovery" />Discovery</td>
+                </tr>
+                <tr>
+                    <td>Accès web</td>
+                    <td><img src="images/icon-ok-32x32.png" alt="logo ok"></td>
+                    <td><img src="images/icon-ok-32x32.png" alt="logo ok"></td>
+                    <td><img src="images/icon-ok-32x32.png" alt="logo ok"></td>
+                </tr>
+                <tr>
+                    <td>Accès mobile</td>
+                    <td><img src="images/icon-ok-32x32.png" alt="logo ok"></td>
+                    <td><img src="images/icon-ok-32x32.png" alt="logo ok"></td>
+                    <td><img src="images/icon-not-ok-32x32.png" alt="logo not ok"></td>
+                </tr>
+                <tr>
+                    <td>Ecoute illimité</td>
+                    <td><img src="images/icon-ok-32x32.png" alt="logo ok"></td>
+                    <td><img src="images/icon-not-ok-32x32.png" alt="logo not ok"></td>
+                    <td><img src="images/icon-not-ok-32x32.png" alt="logo not ok"></td>
+                </tr>
+                <tr>
+                    <td>Tarifs</td>
+                    <td>11,99€/mois</td>
+                    <td>5,99€/mois</td>
+                    <td>Gratuit 1 mois</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="checkbox" name="newsletters">Recevoir nos newsletters</td>
+                    <td><input type="checkbox" name="newsletters_part">Recevoir les newsletters de nos partenaires</td>
+                </tr>
+            </table>
+
+            <input type="reset" value="Annuler" />
+            <input type="submit" value="Valider" />
+    </form>
+</main>
+<footer>
+    <br>
+    <a href="mailto:contact@eni-ecole.fr">ENI-ECOLE</a><br>
+    <a href="https://www.eni-ecole.fr/" target="_blank">&copy; ENI ECOLE INFORMATIONS </a>
+</footer>
+
+</html>

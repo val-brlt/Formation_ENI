@@ -1,0 +1,140 @@
+Constante RIGHT : entier <- 1
+Constante LEFT : entier <- 0
+Constante DEFAULT_TAB : entier <- 42
+Constante WIN_TAB : entier <- 18
+Constante TAILLE : entier <- 7
+Constante MOUTON_RIGHT : caractère <- '>'
+Constante MOUTON_LEFT : caractère <- '<'
+
+Fonction init_tab(tab : entier[], sens : entier) Retourne entier[]
+Variable i : entier
+Variable sens_left : caractère
+Variable sens_right : caractère
+Début 
+	Si sens = DEFAULT_TAB Alors
+		sens_left <- MOUTON_RIGHT 
+		sens_right <- MOUTON_LEFT 
+	Sinon
+		sens_left <- MOUTON_LEFT 
+		sens_right <- MOUTON_RIGHT 
+	FSi
+	Pour i <- 0 à 2
+		tab[i] <- sens_left
+	FPour
+	Pour i <- 4 à TAILLE - 1
+		tab[i] <- sens_right
+	FPour
+	Retourne tab
+Fin 
+
+Fonction show_tab(tab : entier[]) 
+Variable i : entier
+Début 
+	Pour i <- 0 à 6
+		écrireSRC(i)
+	FPour
+	écrire()
+	écrireSRC('|')
+	Pour i <- 0 à TAILLE - 1
+		écrireSRC(tab[i])
+		écrireSRC('|')
+	FPour
+Fin 
+
+Fonction is_same_tab(tab : entier[], tab2 : entier[]) : Retourne booléen
+Variable i : entier
+Début 
+	Pour i <- 0 à TAILLE - 1
+		Si tab[i] != tab2[i]
+			Retourne FAUX
+		FSi
+	FPour
+	Retourne VRAI
+Fin 
+
+Fonction move(tab : entier[], pos : entier, sens : entier) 
+Début 
+	tab[pos] <- '' 
+	Si sens = RIGHT Alors
+		tab[pos + 1] <- MOUTON_RIGHT 
+	Sinon 
+		tab[pos - 1] <- MOUTON_LEFT 
+Fin 
+
+
+Fonction jump(tab : entier[], pos : entier, sens : entier) Retourne booléen
+Début 
+	tab[pos] <- '' 
+	Si sens = RIGHT Alors
+		tab[pos + 2] <- MOUTON_RIGHT 
+	Sinon 
+		tab[pos - 2] <- MOUTON_LEFT 
+Fin 
+
+Fonction is_jump_or_move(tab : entier[], pos : entier) Retourne booléen
+Début 
+	// SI MOUTON >
+	Si tab[pion] = MOUTON_RIGHT Alors 
+		Si tab[pion + 1] = MOUTON_LEFT et tab[pion + 2] = '' Alors
+			// JUMP RIGHT
+			jump(tab, pion, RIGHT)
+		Sinon
+			Si tab[pion + 1] = '' Alors 
+				// MOVE ONE RIGHT
+				move(tab, pion, RIGHT)
+			Sinon
+				Retourne FAUX
+			FSi
+		FSi
+	FSi
+		
+	// SI MOUTON <
+	Si tab[pion] = MOUTON_LEFT Alors
+		Si tab[pion - 1] = MOUTON_RIGHT et tab[pion - 2] = '' Alors
+			// JUMP RIGHT
+			jump(tab, pion, LEFT)
+		Sinon
+			Si tab[pion - 1] = '' Alors 
+			// MOVE ONE LEFT
+			move(tab, pion, LEFT)
+			Sinon
+				Retourne FAUX
+			FSi
+		FSi
+	FSi
+	Retourne VRAI
+Fin 
+
+Algo saute_mouton
+Variable tab : entier [TAILLE]
+Variable tab_win : entier [TAILLE]
+Variable pion : entier
+Variable stop, win : booléen <- FAUX
+Début
+	tab <- init_tab(tab, DEFAULT_TAB)
+	tab_win <- init_tab(tab, WIN_TAB)
+	show_tab(tab)
+	pion <- saisir("Quel pion voulez vous déplacer ? ")
+	
+	Répéter 
+		Si pion >= 0 et pion <= 6 et (tab[pion] = MOUTON_LEFT ou tab[pion] = MOUTON_RIGHT) Alors
+			Si non is_jump_or_move(tab, pion) Alors
+				stop <- VRAI
+			FSi
+			Si is_same_tab(tab, tab_win) Alors
+				win <- VRAI
+			FSi
+		Sinon 
+			écrire("Pion entre 0 et 6 et contenant un mouton")
+		FSi
+		show_tab(tab)
+		pion <- saisir("Quel pion voulez vous déplacer ? ")
+	TantQue stop != VRAI ou win != VRAI FRépéter 
+	
+	Si stop = VRAI Alors
+		écrire("Vous avez perdu")
+	FSi
+	Si win = VRAI Alors
+		écrire("Bravo vous avez gagné !")
+	FSi
+Fin
