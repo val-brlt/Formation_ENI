@@ -2,55 +2,56 @@ CREATE DATABASE BDD_TP
 GO
 
 -- 1.2 Mise en place des tables
- CREATE TABLE Membres(
-numMembre     INT           CONSTRAINT pk_membres PRIMARY KEY,
-nom           VARCHAR2(30)  NOT NULL,
-prenom        VARCHAR2(30)  NOT NULL,
-adresse       VARCHAR2(100) NOT NULL,
-telephone     CHAR(10)      NOT NULL,
-dateAdhesion  DATE          NOT NULL,
-duree         INT           NOT NULL CONSTRAINT ck_membres_duree CHECK(duree IN(1, 3, 6, 12))
+
+create table genres(
+code char(5) constraint pk_genres primary key,
+libelle varchar2(80) not null);
+
+create table ouvrages(
+isbn number(10) constraint pk_ouvrages primary key,
+titre varchar2(200)not null,
+auteur varchar2(80),
+genre char(5) not null constraint fk_ouvrages_genres references genres(code),
+editeur varchar2(80));
+
+
+create table exemplaires(
+isbn number(10),
+numero number(3),
+etat char(5),
+constraint pk_exemplaires primary key(isbn, numero),
+constraint fk_exemplaires_ouvrages foreign key(isbn) references ouvrages(isbn),
+constraint ck_exemplaires_etat check (etat in('NE','BO','MO','MA')) );
+
+
+create table membres(
+numero number(6) constraint pk_membres primary key,
+nom varchar2(80) not null,
+prenom varchar2(80) not null,
+adresse varchar2(200) not null,
+telephone char(10) not null,
+adhesion date not null,
+duree number(2) not null,
+constraint ck_membres_duree check (duree>=0));
+
+
+create table emprunts(
+numero number(10) constraint pk_emprunts primary key,
+membre number(6) constraint fk_emprunts_membres references membres(numero),
+creele date default sysdate
 );
 
-CREATE TABLE Genres(
-codeGenre     CHAR(4)       CONSTRAINT pk_genres PRIMARY KEY,
-libelle       VARCHAR2(30)  CONSTRAINT un_genres_libelle UNIQUE
+
+create table detailsemprunts(
+emprunt number(10) constraint fk_details_emprunts references emprunts(numero),
+numero number(3),
+isbn number(10),
+exemplaire number(3),
+rendule date,
+constraint pk_detailsemprunts primary key (emprunt, numero),
+constraint fk_detailsemprunts_exemplaires foreign key(isbn, exemplaire) references exemplaires(isbn, numero)
 );
 
-CREATE TABLE Ouvrages(
-isbn          CHAR(10)    CONSTRAINT pk_ouvrages PRIMARY KEY,
-titre         VARCHAR2(120) NOT NULL,
-auteur        VARCHAR2(50)  NULL,
-codeGenre     CHAR(4)       NOT NULL CONSTRAINT fk_ouvrages_genres REFERENCES Genres(codeGenre),
-editeur       VARCHAR2(30)  NULL
-);
-
-CREATE TABLE Exemplaires(
-isbn          CHAR(10)      CONSTRAINT fk_exemplaires_ouvrages REFERENCES Ouvrages(isbn),
-numExempl     INT,
-etat          CHAR(2)       NOT NULL
-                            CONSTRAINT ck_exemplaires_etat CHECK(etat IN('NE', 'BO', 'MO', 'MA', 'RE')),
-CONSTRAINT pk_exemplaires PRIMARY KEY(isbn, numExempl)
-);
-
-CREATE TABLE Emprunts(
-numEmprunt    INT           CONSTRAINT pk_emprunts PRIMARY KEY,
-numMembre     INT           NOT NULL
-                            CONSTRAINT fk_emprunts_membres REFERENCES membres(numMembre),
-dateDepart    DATE          NOT NULL
-);
-
-ALTER TABLE Emprunts MODIFY dateDepart DATE DEFAULT SYSDATE;
-
-CREATE TABLE DetailsEmprunts(
-numEmprunt    INT           CONSTRAINT fk_details_emprunts REFERENCES emprunts(numEmprunt),
-numLigne      INT,
-isbn          CHAR(10)      NOT NULL,
-numExempl     INT           NOT NULL,
-dateRetour    DATE          NULL,
-CONSTRAINT pk_details PRIMARY KEY(numEmprunt, numLigne),
-CONSTRAINT fk_details_exemplaires FOREIGN KEY(isbn, numExempl) REFERENCES exemplaires(isbn, numExempl)
-);
 
 -- 1.3 Création d'une séquence
 CREATE SEQUENCE sq_membre START WITH 1 INCREMENT BY 1;
@@ -75,4 +76,5 @@ alter table detailsemprunts drop constraint fk_details_emprunts;
 alter table detailsemprunts add constraint fk_details_emprunts foreign key(emprunt)references emprunts(numero) on delete cascade;
 -- 1.9 Attribution d'une valeur par défaut à une colonne 
 alter table exemplaires modify (etat char(2) default 'NE');
-
+-- 1.11
+rename detailsemprunts to details;
