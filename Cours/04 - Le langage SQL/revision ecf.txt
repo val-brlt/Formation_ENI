@@ -1,0 +1,4 @@
+Pensez à imprimer les slide de 6 à 17 du PDF  4 slides par page
+
+Pour s'entrainer a l'ecf :
+https://www.w3schools.com/sql/sql_exercises.asp

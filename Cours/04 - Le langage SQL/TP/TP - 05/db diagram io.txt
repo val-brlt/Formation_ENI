@@ -1,0 +1,36 @@
+Table client {
+  id int [pk, increment]
+  name varchar(50)
+}
+Table project {
+  id int [pk, increment]
+  name varchar(50)
+  client_id int
+}
+Table quote {
+  id int [pk, increment]
+  name varchar(50)
+  num varchar(10)
+  version int
+  total float
+  project_id int
+}
+Table invoice {
+  id int [pk, increment]
+  name varchar(255)
+  num varchar(10)
+  inv_date date
+  payment date
+  total float
+  quote_id int
+}
+
+
+Ref: "client"."id" < "project"."client_id"
+
+Ref: "project"."id" < "quote"."project_id"
+
+
+
+Ref: "quote"."id" < "invoice"."quote_id"
+
