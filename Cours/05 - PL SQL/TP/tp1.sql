@@ -53,15 +53,26 @@ CONSTRAINT fk_details_exemplaires FOREIGN KEY(isbn, numExempl) REFERENCES exempl
 );
 
 -- 1.3 Création d'une séquence
-CREATE SEQUENCE sq_seq START WITH 1 INCREMENT BY 1;
-
+CREATE SEQUENCE sq_membre START WITH 1 INCREMENT BY 1;
 -- 1.4 Ajout de contraintes d'intégrité
-
-
+alter table membres add constraint uq_membres unique (nom, prenom, telephone);
 -- 1.5 Modification de table : ajout d'une colonne
+alter table membres add mobile char(10);
+alter table membres add constraint ck_membres_mobile check (mobile like '06%' or mobile like '07%');
 -- 1.6 Suppression d'une colonne
+alter table membres drop constraint uq_membres;
+alter table membres set unused (telephone);
+alter table membres drop unused columns;
+alter table membres add constraint uq_membres unique (nom, prenom, mobile);
 -- 1.7 Création d'un index
+create index idx_ouvrages_genre on ouvrages(genre);
+create index idx_emplaires_isbn on exemplaires(isbn);
+create index idx_emprunts_membre on emprunts(membre);
+create index idx_details_emprunt on detailsemprunts(emprunt);
+create index idx_details_exemplaire on detailsemprunts(isbn, exemplaire);
 -- 1.8 Modification d'une contrainte d'intégrité
+alter table detailsemprunts drop constraint fk_details_emprunts;
+alter table detailsemprunts add constraint fk_details_emprunts foreign key(emprunt)references emprunts(numero) on delete cascade;
 -- 1.9 Attribution d'une valeur par défaut à une colonne 
--- 1.10 Définition d'un synonyme
--- 1.11 Modification du nom d'une table
+alter table exemplaires modify (etat char(2) default 'NE');
+
