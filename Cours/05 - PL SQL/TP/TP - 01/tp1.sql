@@ -63,10 +63,10 @@ ALTER TABLE membres ADD CONSTRAINT ck_membres_portable CHECK(portable LIKE '06%'
 
 -- 1.6
 ALTER TABLE membres DROP CONSTRAINT un_membres_nompretel;
-ALTER TABLE membres SET UNUSED(telephone);
+--ALTER TABLE membres SET UNUSED(telephone);
 ALTER TABLE membres ADD CONSTRAINT un_membres_nompretel UNIQUE(nom, prenom, portable);
 -- dans la nuit
-ALTER TABLE membres DROP UNUSED COLUMNS;
+--ALTER TABLE membres DROP UNUSED COLUMNS;
 
 -- 1.7
 CREATE INDEX in_ouvrages_codeGenre ON Ouvrages(codeGenre);
@@ -99,11 +99,11 @@ alter table membres add mobile char(10);
 alter table membres add constraint ck_membres_mobile check (mobile like '06%' or mobile like '07%');
 -- 1.6 Suppression d'une colonne
 alter table membres drop constraint uq_membres;
-alter table membres set unused (telephone);
-alter table membres drop unused columns;
+--alter table membres set unused (telephone);
+--alter table membres drop unused columns;
 alter table membres add constraint uq_membres unique (nom, prenom, mobile);
 -- 1.7 Création d'un index
-create index idx_ouvrages_genre on ouvrages(genre);
+create index idx_ouvrages_codeGenre on ouvrages(codeGenre);
 create index idx_emplaires_isbn on exemplaires(isbn);
 create index idx_emprunts_membre on emprunts(membre);
 create index idx_details_emprunt on detailsemprunts(emprunt);
@@ -219,7 +219,7 @@ insert into details(emprunt, numero, isbn, exemplaire, rendule) values(19,1,2746
 insert into details(emprunt, numero, isbn, exemplaire, rendule) values(20,1,2266091611,1,default);
 insert into details(emprunt, numero, isbn, exemplaire, rendule) values(20,2,2253010219,1,default);
 
-Insert into ouvrages (isbn, titre, auteur, genre, editeur) values (2080703234, 'Cinq semaines en ballon', 'Jules Verne', 'ROM', 'Flammarion');
+Insert into ouvrages (isbn, titre, auteur, codeGenre, editeur) values (2080703234, 'Cinq semaines en ballon', 'Jules Verne', 'ROM', 'Flammarion');
 
 
 
