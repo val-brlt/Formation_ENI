@@ -1,0 +1,22 @@
+Front-end
+HTML5, 
+CSS
+Javascript,
+
+Back-end
+HTML5, 
+CSS
+SQL Server,
+Oracle,
+Java EE,
+Tomcat,
+PHP & Symfony,
+MySQL,
+WAMP Server,
+
+Java SE
+Scrum,
+UML,
+CDM,
+Wordpress,
+Android
