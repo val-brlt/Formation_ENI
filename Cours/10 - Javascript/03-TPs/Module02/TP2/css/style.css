@@ -1,0 +1,113 @@
+
+body {
+    height: 100%;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input[type="text"] {
+    margin-top: 25px;
+    font: inherit;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 3px 5px;
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+input[type="date"] {
+    margin-top: 25px;
+    font: inherit;
+    width: 350px;
+    height: 50px;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 3px 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+input {
+    outline:none;
+}
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+#btn {
+    margin-top: 35px;
+    width: 150px;
+    height: 70px;
+    background-color: #dcc3c3;
+    border: 0;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+#btn:hover {
+    transform: scale(1.2);
+    background-color: #a38c8c;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    padding: 9px 0px 9px 0px;
+    border-bottom: 2px solid black;
+    margin:0;
+}
+
+.cont_savoir {
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    margin: 35px;
+    display: grid;
+    grid-template-areas:
+            "a a c"
+            "b b c";
+}
+.cont_savoir h2{
+    grid-area: a;
+}
+.cont_savoir p{
+    grid-area: b;
+}
+
+.cont_savoir button{
+    width: 50%;
+    background-color: white;
+    border: 0;
+    outline: none;
+    font-size: 80px;
+    grid-area: c;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cont_savoir button:hover{
+    transform: rotate(360deg);
+}
+#lstSavoir {
+    width: 90%;
+}

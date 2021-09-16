@@ -5,8 +5,7 @@ public class Operation {
     public static int ajouter(int x, int y) throws DepassementCapaciteException {
         long rst_l = x + y;
         int rst = 0;
-        if (rst_l < -2147483648 || rst_l > 2147483647)
-            throw new DepassementCapaciteException("Erreur dépassement");
+        
         return rst;
     }
 

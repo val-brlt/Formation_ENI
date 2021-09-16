@@ -2,42 +2,75 @@ import java.util.Scanner;
 
 public class Calculatrice {
     
-    public static Scanner s = new Scanner(System.in);
+	private static Scanner s = new Scanner(System.in);
+	
+	public static int getValue() {
+		return 0;
+	}
+	
+	public static char getOperator() {
+		return s.nextLine().charAt(0);
+	}
+	
+	public static void main(String[] args) {
+	
+		int result = 0;
+		
+		while (/* Tant que quelque chose ... */) {
+			
+			int value1 = getValue();
+			char operator = getOperator();
+			int value2 = getValue();
+			try {
+				switch (operator) {
+					case '+':
+						result = Operation.ajouter(value1, value2);
+						break;
+					case '-':
+						result = Operation.soustraire(value1, value2);
+						break;
+					case 'x':
+						result = Operation.multiplier(value1, value2);
+						break;
+					case '/':
+						result = value1 / value2;
+						break;
+					case '%':
+						result = value1 % value2;
+						break;
+					case 'q':
+						/* Quelque chose */
+						break;
+					default:
+						break;
+				}
+			} catch (Exception e) {
+				System.err.printf("%s\n", e.getMessage());
+			}
+		}
+		if (s != null)
+			s.close();
+	}
 
-    public static void main(String[] args){
-        int x = 0;
-        int y = 0;
-        long xl = 0;
-        long yl = 0;
-        System.out.printf("Saisir un nombre entier :");
-        boolean yes = false;
-        while (!yes) {
+}
+
+
+/*        while (!yes) {
             //x = s.nextInt();
            // y = s.nextInt();
             xl = x;
             yl = y;
             try {
-                System.out.printf("Saisir un nombre entier : ");
-                if (s.hasNextInt()) {
-                    x = s.nextInt();
-                    yes = true;
-                }
-                else {
-                    throw new DepassementCapaciteException("La valeur saisie dépasse les capacités de cette calculatrice. ");
-                }
+                long t = xl/yl;
+                if (yl == 0) 
+                    throw new DivByZero("La division par zéro n'est pas définie !");
+
              }
-            catch(DepassementCapaciteException e) {
-                System.out.println(e);
-                s.nextLine();
+            catch(DivByZero e) {
+                //System.out.println(e);
+                //s.nextLine();
             }
-        }
-
-
-        System.out.printf("\n FIN PROG\n");
-
-    }
-}
-
+        }*/
 
 /* Le résultat dépasse la capacité de la calulatrice 
         while (!yes) {
@@ -63,14 +96,14 @@ public class Calculatrice {
 
     /*  Saisie incorrecte. Réessayez...
 
-                try {
+            try {
                 System.out.printf("Saisir un nombre entier : ");
                 if (s.hasNextInt()) {
                     x = s.nextInt();
                     yes = true;
                 }
                 else 
-                    throw new DepassementCapaciteException("ERREUR DEPASSEMENT MA GUEULE");
+                    throw new DepassementCapaciteException("");
              }
             catch(DepassementCapaciteException e) {
                 System.out.println(e);

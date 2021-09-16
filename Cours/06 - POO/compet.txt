@@ -20,3 +20,18 @@ UML,
 CDM,
 Wordpress,
 Android
+
+
+1er projet
+HTML5&CSS,
+JAVA EE,
+SQL Server,
+Tomcat
+
+2ème projet
+
+HTML5&CSS,
+Javascript,
+PHP&Symfony,
+MySQL,
+WAMP Server

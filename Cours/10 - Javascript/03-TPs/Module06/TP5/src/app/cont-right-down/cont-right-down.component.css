@@ -1,0 +1,32 @@
+.content {
+  width: 100%;
+  height:300px;
+  border: 2px solid black;
+
+}
+
+.btn {
+  display: flex;
+  justify-content: flex-end;
+
+}
+.btn  button {
+  cursor: pointer;
+  margin: 20px 10px;
+}
+
+.cont{
+  margin: 20px;
+}
+
+#pseudo, #message {
+
+  width: 100%;
+}
+
+#message {
+  padding-bottom: 50px;
+}
+ #pseudo {
+   height: 20px;
+ }

@@ -1,0 +1,16 @@
+.cont{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont_body {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.cont_right {
+  display: flex;
+  flex-direction: column;
+}
